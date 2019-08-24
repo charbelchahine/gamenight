@@ -10,8 +10,6 @@ const _ = require(`lodash`)
 const Promise = require(`bluebird`)
 const slash = require(`slash`)
 
-const slugify = require('slugify')
-
 exports.onCreatePage = ({ page, actions }) => {
 	if (page.componentPath && page.componentPath.match(/pages|templates/)) {
 		const { createPage, deletePage } = actions
