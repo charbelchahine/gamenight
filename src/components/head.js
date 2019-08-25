@@ -113,10 +113,10 @@ const Head = ({ seo = {}, path }) => (
 						{JSON.stringify(schemaOrgJSONLD)}
 					</script>
 				</Helmet>
-			)
+			);
 		}}
 	/>
-)
+);
 
 Head.propTypes = {
 	seo: PropTypes.shape({
@@ -139,11 +139,11 @@ Head.propTypes = {
 		type: PropTypes.string,
 		description: PropTypes.string,
 	}),
-	path: PropTypes.string.isRequired
-}
+	path: PropTypes.string.isRequired,
+};
 
 Head.defaultProps = {
 	seo: {},
-}
+};
 
-export default Head
+export default Head;
