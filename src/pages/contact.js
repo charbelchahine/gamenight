@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import T from 'i18n-react';
 import Helmet from 'react-helmet';
 import { TextField, Button } from 'react-md';
 import Layout from '../components/layout';
 
-const ContactPage = ({ pageContext: { lang }, location: { pathname }, data }) => (
+const ContactPage = ({ pageContext: { lang }, location: { pathname } }) => (
     <Layout path={pathname}>
         {T.setTexts(lang)}
         <Helmet title={T.translate('contact.title')} />
@@ -53,5 +54,19 @@ const ContactPage = ({ pageContext: { lang }, location: { pathname }, data }) =>
         </section>
     </Layout>
 );
+
+ContactPage.propTypes = {
+    pageContext: PropTypes.shape({
+        lang: PropTypes.shape({}),
+    }),
+    location: PropTypes.shape({
+        pathname: PropTypes.string,
+    }),
+};
+
+ContactPage.defaultProps = {
+    pageContext: {},
+    location: {},
+};
 
 export default ContactPage;

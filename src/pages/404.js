@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import T from 'i18n-react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
@@ -13,5 +14,19 @@ const NotFoundPage = ({ pageContext: { lang }, location: { pathname } }) => (
         <Link to="/">{T.translate('e404.link')}</Link>
     </Layout>
 );
+
+NotFoundPage.propTypes = {
+    pageContext: PropTypes.shape({
+        lang: PropTypes.shape({}),
+    }),
+    location: PropTypes.shape({
+        pathname: PropTypes.string,
+    }),
+};
+
+NotFoundPage.defaultProps = {
+    pageContext: {},
+    location: {},
+};
 
 export default NotFoundPage;

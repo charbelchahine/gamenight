@@ -4,7 +4,7 @@ import Link from './link';
 import Sidebar from './sidebar';
 import logo from '../assets/images/logo.svg';
 
-const Header = ({ children, data }) => (
+const Header = ({ children }) => (
     <header className="content">
         <Sidebar className="hello" />
         <Link to="/" activeClassName="active" className="navLogo">

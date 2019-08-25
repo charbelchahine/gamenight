@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Head from './head';
 import Header from './header';
 import Lang from './lang';
 
 import NavLinks from './navlinks';
 
-export default ({ children, path, seo }) => (
+const Layout = ({ children, path, seo }) => (
     <div>
         <Head seo={seo} path={path} />
         <Header siteTitle="Mountain Central">
@@ -15,3 +16,13 @@ export default ({ children, path, seo }) => (
         <div>{children}</div>
     </div>
 );
+
+Layout.propTypes = {
+    children: PropTypes.node,
+};
+
+Layout.defaultProps = {
+    children: '',
+};
+
+export default Layout;

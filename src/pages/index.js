@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import T from 'i18n-react';
 import Helmet from 'react-helmet';
 
@@ -37,6 +38,28 @@ const IndexPage = ({ pageContext: { lang }, location: { pathname }, data }) => (
         </section>
     </Layout>
 );
+
+IndexPage.propTypes = {
+    data: PropTypes.shape({
+        Header: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fixed: PropTypes.shape({}),
+            }),
+        }),
+    }),
+    pageContext: PropTypes.shape({
+        lang: PropTypes.shape({}),
+    }),
+    location: PropTypes.shape({
+        pathname: PropTypes.string,
+    }),
+};
+
+IndexPage.defaultProps = {
+    data: {},
+    pageContext: {},
+    location: {},
+};
 
 export default IndexPage;
 
