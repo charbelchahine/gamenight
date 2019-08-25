@@ -25,14 +25,14 @@ const Head = ({ seo = {}, path }) => (
 		`}
 		render={data => {
 			const site = data.site.siteMetadata
-			var schemaOrgJSONLD = [
+			const schemaOrgJSONLD = [
 				{
 					'@context': 'http://schema.org',
 					'@type': 'WebSite',
 					url: site.url + path,
 					name: seo.title || site.title,
 					description: seo.description || site.description,
-					image: site.url + '/icons/seo.png'
+					image: `${site.url  }/icons/seo.png`
 				},
 				{
 					'@context': 'http://schema.org',
@@ -43,7 +43,7 @@ const Head = ({ seo = {}, path }) => (
 				}
 			]
 			if (seo.article) {
-				const article = seo.article
+				const {article} = seo
 				schemaOrgJSONLD.push({
 					'@context': 'http://schema.org',
 					'@type': 'Article',
@@ -108,7 +108,7 @@ const Head = ({ seo = {}, path }) => (
 						content={seo.description || site.description}
 					/>
 					<meta property="og:url" content={site.url + path} />
-					<meta property="og:image" content={site.url + '/icons/seo.png'} />
+					<meta property="og:image" content={`${site.url  }/icons/seo.png`} />
 					<script type="application/ld+json">
 						{JSON.stringify(schemaOrgJSONLD)}
 					</script>
@@ -119,8 +119,31 @@ const Head = ({ seo = {}, path }) => (
 )
 
 Head.propTypes = {
-	seo: PropTypes.object,
+	seo: PropTypes.shape({
+		article: PropTypes.shape({
+			author: PropTypes.string,
+			date: PropTypes.shape({
+				created: PropTypes.string,
+				modified: PropTypes.string,
+				published: PropTypes.string,
+			}),
+			description: PropTypes.string,
+			image: PropTypes.string,
+			publisher: PropTypes.string,
+			title: PropTypes.string,
+			url: PropTypes.string,
+		}),
+		author: PropTypes.string,
+		class: PropTypes.string,
+		title: PropTypes.string,
+		type: PropTypes.string,
+		description: PropTypes.string,
+	}),
 	path: PropTypes.string.isRequired
+}
+
+Head.defaultProps = {
+	seo: {},
 }
 
 export default Head
