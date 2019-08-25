@@ -19,10 +19,13 @@ const Layout = ({ children, path, seo }) => (
 
 Layout.propTypes = {
     children: PropTypes.node,
+    path: PropTypes.string.isRequired,
+    seo: PropTypes.shape({}),
 };
 
 Layout.defaultProps = {
     children: '',
+    seo: {},
 };
 
 export default Layout;
