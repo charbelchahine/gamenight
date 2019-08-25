@@ -25,8 +25,8 @@ class Lang extends React.Component {
     render() {
         return (
             <div className="langSelector">
-                {Object.keys(i18n).map((lang, index) => (
-                    <Button flat key={index} value={i18n[lang].path} onClick={this.handleClick}>
+                {Object.keys(i18n).map(lang => (
+                    <Button flat key={lang} value={i18n[lang].path} onClick={this.handleClick}>
                         {i18n[lang].name}
                     </Button>
                 ))}

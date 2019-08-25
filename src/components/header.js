@@ -6,7 +6,7 @@ import logo from '../assets/images/logo.svg';
 
 const Header = ({ children }) => (
     <header className="content">
-        <Sidebar className="hello" />
+        <Sidebar />
         <Link to="/" activeClassName="active" className="navLogo">
             <img src={logo} alt="logo" />
         </Link>
