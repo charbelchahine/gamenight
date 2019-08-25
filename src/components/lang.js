@@ -9,7 +9,6 @@ class Lang extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // value: T.translate('path'),
             path:
                 T.translate('path') && props.path.search(T.translate('path')) === 0
                     ? props.path.replace(T.translate('path'), '')
@@ -20,7 +19,6 @@ class Lang extends React.Component {
 
     handleClick(event) {
         const { path } = this.state;
-        // this.setState({ value: e.target.value });
         push(event.target.value + path);
     }
 
