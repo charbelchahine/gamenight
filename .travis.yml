@@ -7,9 +7,9 @@ notifications:
 cache: yarn
 
 branches:
-  only:
-    - master
+    only:
+        - master
 
 script:
-  - "yarn test"
-  - "yarn build"
+    - 'yarn test'
+    - 'yarn build'
