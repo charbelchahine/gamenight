@@ -3,7 +3,6 @@
  * https://www.gatsbyjs.org/docs/node-apis/
  * */
 
-const path = require('path');
 const i18n = require('./src/i18n/config/i18n');
 
 const Promise = require(`bluebird`);
