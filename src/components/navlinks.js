@@ -6,7 +6,6 @@ function NavLinks() {
     return (
         <div className="navLinks">
             <Link to="/">{T.translate('home.title')}</Link>
-            <Link to="/projects">Projects</Link>
             <Link to="/contact">{T.translate('contact.title')}</Link>
         </div>
     );
