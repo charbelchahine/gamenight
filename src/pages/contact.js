@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import T from 'i18n-react';
 import Helmet from 'react-helmet';
-import { TextField, Button } from 'react-md';
 import Layout from '../components/layout';
 
 const ContactPage = ({ pageContext: { lang }, location: { pathname } }) => (
@@ -11,7 +10,7 @@ const ContactPage = ({ pageContext: { lang }, location: { pathname } }) => (
         <Helmet title={T.translate('contact.title')} />
         <section id="contactForm" className="content">
             <div className="contactGrid">
-                <TextField
+                {/* <TextField
                     id="floating-center-title"
                     label={T.translate('contact.inquiry')}
                     lineDirection="center"
@@ -46,11 +45,11 @@ const ContactPage = ({ pageContext: { lang }, location: { pathname } }) => (
                     label={T.translate('contact.company')}
                     lineDirection="center"
                     className="md-cell md-cell--bottom contactInput"
-                />
+                /> */}
             </div>
-            <Button raised secondary swapTheming id="submitForm">
+            {/* <Button raised secondary swapTheming id="submitForm">
                 {T.translate('contact.submit')}
-            </Button>
+            </Button> */}
         </section>
     </Layout>
 );
