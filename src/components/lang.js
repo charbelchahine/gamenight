@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import T from 'i18n-react';
-import { push } from 'gatsby';
+import { navigate } from 'gatsby';
 import i18n from '../i18n/config/i18n';
 
 class Lang extends React.Component {
@@ -18,7 +18,7 @@ class Lang extends React.Component {
 
     handleClick(event) {
         const { path } = this.state;
-        push(event.target.value + path);
+        navigate(event.target.value + path);
     }
 
     render() {

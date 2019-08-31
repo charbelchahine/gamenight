@@ -13,7 +13,7 @@ exports.onCreatePage = ({ page, actions }) => {
         const getTitle = (object, path) => {
             const array = path.split('/').filter(val => val);
             if (path === '/') {
-                array.push('home');
+                array.navigate('home');
             }
             let value = {};
             value = array.reduce(

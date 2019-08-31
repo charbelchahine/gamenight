@@ -45,7 +45,7 @@ const Head = ({ seo = {}, path }) => (
             ];
             if (seo.article) {
                 const { article } = seo;
-                schemaOrgJSONLD.push({
+                schemaOrgJSONLD.navigate({
                     '@context': 'http://schema.org',
                     '@type': 'Article',
                     headline: article.title || null,
