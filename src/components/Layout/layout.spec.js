@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import Layout from './layout';
 
-describe('Header', () => {
+describe('Layout', () => {
     let wrapper;
     const path = '/home/404/index';
     const children = <div id="headerChildrenTest">Hello world</div>;
