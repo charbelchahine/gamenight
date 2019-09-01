@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import Layout from '../components/layout';
+import Layout from '../components/Layout/layout';
 
 import '../styles/css/index.css';
 
