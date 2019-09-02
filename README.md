@@ -1,6 +1,6 @@
 # Multilingual Gatsby NetlifyCMS Starter
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ada97e40-29d6-4947-8885-2814ad3f0008/deploy-status)](https://app.netlify.com/sites/game-night/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ada97e40-29d6-4947-8885-2814ad3f0008/deploy-status)](https://app.netlify.com/sites/game-night/deploys)  [![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100)](https://github.com/ebidel/lighthouse-badge)
 
 This is a gatsby starter, it supports multiple languages, NetlifyCMS, styling in Sass, and material ui components. A hosted demo is found at https://mountaincentral.netlify.com
 
