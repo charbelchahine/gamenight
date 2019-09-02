@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import T from 'i18n-react';
 import Helmet from 'react-helmet';
 import dompurify from 'dompurify';
-import Layout from '../components/layout';
+import Layout from '../components/Layout/layout';
 
 const sanitizer = dompurify.sanitize;
 

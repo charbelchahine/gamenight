@@ -1,6 +1,6 @@
 import React from 'react';
 import T from 'i18n-react';
-import Link from './link';
+import Link from '../Link/link';
 
 function NavLinks() {
     return (

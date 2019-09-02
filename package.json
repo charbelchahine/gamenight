@@ -6,11 +6,16 @@
     "description": "Game Night",
     "version": "1.0.0",
     "dependencies": {
+        "babel-jest": "^24.9.0",
+        "babel-preset-gatsby": "^0.2.11",
         "dompurify": "^1.0.11",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
         "eslint": "^6.2.2",
         "eslint-config-airbnb": "^18.0.1",
         "eslint-config-prettier": "^6.1.0",
         "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jest": "^22.16.0",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-prettier": "^3.1.0",
         "eslint-plugin-react": "^7.14.3",
@@ -33,6 +38,8 @@
         "gatsby-transformer-sharp": "^2.2.12",
         "graphql": "^0.13.0",
         "i18n-react": "^0.7.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^24.9.0",
         "node-sass": "^4.12.0",
         "prettier": "^1.18.2",
         "prop-types": "^15.7.2",
@@ -41,14 +48,16 @@
         "react-dom": "^16.9.0",
         "react-helmet": "^5.2.1",
         "react-hot-loader": "^4.12.12",
+        "react-test-renderer": "^16.9.0",
         "typeface-roboto": "^0.0.54",
         "webpack": "^4.39.3"
     },
     "scripts": {
-        "test": "echo \"Warn: no test specified\" && exit 0",
         "start": "gatsby develop",
         "build": "gatsby build",
         "serve": "gatsby serve",
+        "test": "jest --coverage",
+        "jest:w": "jest --watch --coverage",
         "sass": "sass --watch src/styles/scss:src/styles/css"
     },
     "homepage": "https://game-night.netlify.com/"
