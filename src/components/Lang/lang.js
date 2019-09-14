@@ -40,6 +40,7 @@ class Lang extends React.Component {
         return (
             <div className="langSelector">
                 <IconButton
+                    name="Language"
                     aria-haspopup="true"
                     aria-controls="lang-selector"
                     onClick={this.handleOpenMenu}
