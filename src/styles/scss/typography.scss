@@ -20,5 +20,4 @@
     @include google-font-weight($name, 'light');
     @include google-font-weight($name, 'thin');
 }
-@include google-font('awconqueror');
-@include google-font('postgrotesk');
+@include google-font('roboto');
