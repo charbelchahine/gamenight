@@ -354,10 +354,17 @@ header {
 @media (min-width: 768px) {
   .navLinks {
     display: flex; }
+    .navLinks a.light-mode {
+      color: blue; }
+    .light-mode .navLinks a {
+      color: blue; }
+    .navLinks a.dark-mode {
+      color: white; }
+    .dark-mode .navLinks a {
+      color: white; }
 
   .navLogo {
-    display: contents;
-    font-family: 'AWConqueror light'; } }
+    display: contents; } }
 .bm-burger-button {
   position: fixed;
   left: 36px;

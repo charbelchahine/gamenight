@@ -1,8 +1,10 @@
 $themes: (
     light: (
         backgroundColor: $whiteBackground,
+        linkColor: $linkLightColor,
     ),
     dark: (
         backgroundColor: $blackBackground,
+        linkColor: $linkDarkColor,
     ),
 );

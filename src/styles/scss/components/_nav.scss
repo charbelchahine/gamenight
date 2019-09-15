@@ -20,9 +20,13 @@ header {
 @media (min-width: 768px) {
     .navLinks {
         display: flex;
+        a {
+            @include themed {
+                color: t('linkColor');
+            }
+        }
     }
     .navLogo {
         display: contents;
-        font-family: 'AWConqueror light';
     }
 }
