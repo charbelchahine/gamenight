@@ -5,7 +5,9 @@
 }
 
 .bm-menu {
-    background: white;
+    @include themed {
+        background-color: t('backgroundColor');
+    }
 }
 
 .bm-overlay {

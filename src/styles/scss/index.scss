@@ -1,6 +1,10 @@
+@import './theme/colors';
+@import './theme/themes';
+@import './utils/themeUtil';
+
+@import './utils/typography';
 @import './normalize';
 @import './grid';
-@import './typography';
 
 @import './components/nav';
 @import './components/sidebar';
