@@ -1,7 +1,6 @@
 header {
     display: flex;
     justify-content: space-between;
-    margin: 20px auto !important;
 }
 
 .navLogo,
@@ -21,9 +20,13 @@ header {
 @media (min-width: 768px) {
     .navLinks {
         display: flex;
+        a {
+            @include themed {
+                color: t('linkColor');
+            }
+        }
     }
     .navLogo {
         display: contents;
-        font-family: 'AWConqueror light';
     }
 }

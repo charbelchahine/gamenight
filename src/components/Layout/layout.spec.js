@@ -16,7 +16,7 @@ describe('Layout', () => {
         expect(wrapper.exists()).toBe(true);
     });
 
-    it('should have a Head and NavLinks & Lang selector inside the Header', () => {
+    it('should have a Head and NavLinks & Lang selector & ThemeToggle inside the Header', () => {
         expect(wrapper.find('Head').exists()).toBe(true);
         expect(
             wrapper
@@ -28,6 +28,12 @@ describe('Layout', () => {
             wrapper
                 .find('Header')
                 .find('Lang')
+                .exists(),
+        ).toBe(true);
+        expect(
+            wrapper
+                .find('Header')
+                .find('ThemeToggle')
                 .exists(),
         ).toBe(true);
     });

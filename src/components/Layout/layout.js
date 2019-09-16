@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Head from '../Head/head';
 import Header from '../Header/header';
 import Lang from '../Lang/lang';
+import ThemeToggle from '../ThemeToggle/themeToggle';
 
 import NavLinks from '../Navlinks/navlinks';
 
@@ -12,6 +13,7 @@ const Layout = ({ children, path, seo }) => (
         <Header siteTitle="Mountain Central">
             <NavLinks />
             <Lang path={path} />
+            <ThemeToggle />
         </Header>
         <div>{children}</div>
     </div>

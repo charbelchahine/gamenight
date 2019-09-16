@@ -32,6 +32,7 @@
         "gatsby-plugin-sass": "^2.1.12",
         "gatsby-plugin-sharp": "^2.2.18",
         "gatsby-plugin-sitemap": "^2.2.9",
+        "gatsby-plugin-use-dark-mode": "^1.1.2",
         "gatsby-remark-autolink-headers": "^2.1.8",
         "gatsby-remark-images": "^3.0.1",
         "gatsby-source-filesystem": "^2.1.18",
@@ -52,6 +53,7 @@
         "react-hot-loader": "^4.12.12",
         "react-test-renderer": "^16.9.0",
         "typeface-roboto": "^0.0.54",
+        "use-dark-mode": "^2.3.1",
         "webpack": "^4.39.3"
     },
     "scripts": {

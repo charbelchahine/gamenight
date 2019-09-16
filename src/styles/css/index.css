@@ -1,3 +1,18 @@
+@font-face {
+  font-family: roboto;
+  src: url("/../../fonts/roboto.woff2") format("woff2"), url("/../../fonts/roboto.woff") format("woff"), url("/../../fonts/roboto.ttf") format("truetype"); }
+@font-face {
+  font-family: roboto black;
+  src: url("/../../fonts/roboto-black.woff2") format("woff2"), url("/../../fonts/roboto-black.woff") format("woff"), url("/../../fonts/roboto-black.ttf") format("truetype"); }
+@font-face {
+  font-family: roboto bold;
+  src: url("/../../fonts/roboto-bold.woff2") format("woff2"), url("/../../fonts/roboto-bold.woff") format("woff"), url("/../../fonts/roboto-bold.ttf") format("truetype"); }
+@font-face {
+  font-family: roboto light;
+  src: url("/../../fonts/roboto-light.woff2") format("woff2"), url("/../../fonts/roboto-light.woff") format("woff"), url("/../../fonts/roboto-light.ttf") format("truetype"); }
+@font-face {
+  font-family: roboto thin;
+  src: url("/../../fonts/roboto-thin.woff2") format("woff2"), url("/../../fonts/roboto-thin.woff") format("woff"), url("/../../fonts/roboto-thin.ttf") format("truetype"); }
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -298,43 +313,32 @@ template {
   display: none; }
 
 html {
-  background: white !important;
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif; }
 
 body {
-  background-color: white;
   overflow-x: hidden;
   position: relative; }
+  body.light-mode {
+    background-color: white; }
+  .light-mode body {
+    background-color: white; }
+  body.dark-mode {
+    background-color: black; }
+  .dark-mode body {
+    background-color: black; }
 
 #___gatsby {
   max-width: 1400px;
-  margin: 0 auto;
-  background-color: white; }
+  margin: 0 auto; }
 
 .content {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%; }
 
-@font-face {
-  font-family: roboto;
-  src: url("/../../fonts/roboto.woff2") format("woff2"), url("/../../fonts/roboto.woff") format("woff"), url("/../../fonts/roboto.ttf") format("truetype"); }
-@font-face {
-  font-family: roboto black;
-  src: url("/../../fonts/roboto-black.woff2") format("woff2"), url("/../../fonts/roboto-black.woff") format("woff"), url("/../../fonts/roboto-black.ttf") format("truetype"); }
-@font-face {
-  font-family: roboto bold;
-  src: url("/../../fonts/roboto-bold.woff2") format("woff2"), url("/../../fonts/roboto-bold.woff") format("woff"), url("/../../fonts/roboto-bold.ttf") format("truetype"); }
-@font-face {
-  font-family: roboto light;
-  src: url("/../../fonts/roboto-light.woff2") format("woff2"), url("/../../fonts/roboto-light.woff") format("woff"), url("/../../fonts/roboto-light.ttf") format("truetype"); }
-@font-face {
-  font-family: roboto thin;
-  src: url("/../../fonts/roboto-thin.woff2") format("woff2"), url("/../../fonts/roboto-thin.woff") format("woff"), url("/../../fonts/roboto-thin.ttf") format("truetype"); }
 header {
   display: flex;
-  justify-content: space-between;
-  margin: 20px auto !important; }
+  justify-content: space-between; }
 
 .navLogo,
 .navLinks {
@@ -350,17 +354,30 @@ header {
 @media (min-width: 768px) {
   .navLinks {
     display: flex; }
+    .navLinks a.light-mode {
+      color: black; }
+    .light-mode .navLinks a {
+      color: black; }
+    .navLinks a.dark-mode {
+      color: white; }
+    .dark-mode .navLinks a {
+      color: white; }
 
   .navLogo {
-    display: contents;
-    font-family: 'AWConqueror light'; } }
+    display: contents; } }
 .bm-burger-button {
   position: fixed;
   left: 36px;
   top: 36px; }
 
-.bm-menu {
-  background: white; }
+.bm-menu.light-mode {
+  background-color: white; }
+.light-mode .bm-menu {
+  background-color: white; }
+.bm-menu.dark-mode {
+  background-color: black; }
+.dark-mode .bm-menu {
+  background-color: black; }
 
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3); }

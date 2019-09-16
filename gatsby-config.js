@@ -45,5 +45,14 @@ module.exports = {
         },
         'gatsby-plugin-offline',
         'gatsby-plugin-sass',
+        {
+            resolve: 'gatsby-plugin-use-dark-mode',
+            options: {
+                classNameDark: 'dark-mode',
+                classNameLight: 'light-mode',
+                storageKey: 'darkMode',
+                minify: true,
+            },
+        },
     ],
 };
