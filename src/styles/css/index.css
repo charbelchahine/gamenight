@@ -355,9 +355,9 @@ header {
   .navLinks {
     display: flex; }
     .navLinks a.light-mode {
-      color: blue; }
+      color: black; }
     .light-mode .navLinks a {
-      color: blue; }
+      color: black; }
     .navLinks a.dark-mode {
       color: white; }
     .dark-mode .navLinks a {
