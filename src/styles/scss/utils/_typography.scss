@@ -1,4 +1,4 @@
-@mixin google-font-weight($name, $weight: '') {
+@mixin font-weight($name, $weight: '') {
     $space-weight: ' ' + $weight;
     $dash-weight: '-' + $weight;
 
@@ -13,11 +13,13 @@
             url('/../../fonts/'+$name+$dash-weight+'.ttf') format('truetype');
     }
 }
-@mixin google-font($name) {
-    @include google-font-weight($name);
-    @include google-font-weight($name, 'black');
-    @include google-font-weight($name, 'bold');
-    @include google-font-weight($name, 'light');
-    @include google-font-weight($name, 'thin');
+@mixin font($name) {
+    @include font-weight($name);
+    @include font-weight($name, 'black');
+    @include font-weight($name, 'bold');
+    @include font-weight($name, 'light');
+    @include font-weight($name, 'thin');
 }
-@include google-font('roboto');
+
+// Include your fonts here
+@include font('roboto');

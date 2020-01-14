@@ -1,12 +1,16 @@
+// Theme
 @import './theme/colors';
 @import './theme/themes';
 @import './utils/themeUtil';
 
+// Sitewide
 @import './utils/typography';
 @import './normalize';
 @import './grid';
 
-@import './components/nav';
-@import './components/sidebar';
+// Components
+@import '../../components/Navlinks/nav';
+@import '../../components/Sidebar/sidebar';
 
+// Pages
 @import './pages/homepage';

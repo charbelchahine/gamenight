@@ -41,11 +41,11 @@ class Lang extends React.Component {
             <div className="langSelector">
                 <IconButton
                     aria-haspopup="true"
-                    aria-label="Language"
+                    aria-label="Language Selector"
                     aria-controls="lang-selector"
                     onClick={this.handleOpenMenu}
                 >
-                    <LanguageIcon color="primary" />
+                    <LanguageIcon />
                 </IconButton>
                 <Menu
                     keepMounted
