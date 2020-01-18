@@ -321,7 +321,10 @@ body {
   position: relative;
   max-width: 930px;
   margin: 0 auto;
-  padding: 0 50px; }
+  padding: 0 20px; }
+  @media (min-width: 375px) {
+    body {
+      padding: 0 50px; } }
   body.light-mode {
     background-color: #f8f8f8; }
   .light-mode body {
@@ -411,7 +414,190 @@ nav {
   color: #240c6d;
   background-color: rgba(36, 12, 109, 0.2); }
 
-h1 {
-  font-family: NeutraText-bold, Arial, Helvetica, sans-serif; }
+.games {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; }
+  .games a {
+    text-decoration: none; }
+
+.gamePreview {
+  display: flex;
+  -ms-flex: auto;
+  flex-basis: 100%;
+  position: relative;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  width: 225px;
+  height: 115px; }
+  @media (min-width: 600px) {
+    .gamePreview {
+      flex-basis: 38%;
+      margin-bottom: 50px; } }
+  @media (min-width: 700px) {
+    .gamePreview {
+      flex-basis: 40%; } }
+  @media (min-width: 800px) {
+    .gamePreview {
+      flex-basis: 25%; } }
+  @media (min-width: 960px) {
+    .gamePreview {
+      flex-basis: 24%; } }
+  .gamePreview .gameName {
+    font-size: 27px;
+    color: #ffffff;
+    max-width: 145px;
+    margin: 10px auto auto 0;
+    font-family: NeutraText-bold, Arial, Helvetica, sans-serif; }
+
+.rollDice.light-mode {
+  background-image: linear-gradient(134deg, #44dec5 0%, #4ebcfa 100%);
+  box-shadow: 0 25px 40px -15px #4acae4; }
+  .rollDice.light-mode .gameIcon {
+    position: absolute; }
+.light-mode .rollDice {
+  background-image: linear-gradient(134deg, #44dec5 0%, #4ebcfa 100%);
+  box-shadow: 0 25px 40px -15px #4acae4; }
+  .light-mode .rollDice .gameIcon {
+    position: absolute; }
+.rollDice.dark-mode {
+  background-image: linear-gradient(135deg, #031d22 0%, #00598b 100%);
+  box-shadow: 0 25px 40px -15px #014263; }
+  .rollDice.dark-mode .gameIcon {
+    position: absolute; }
+.dark-mode .rollDice {
+  background-image: linear-gradient(135deg, #031d22 0%, #00598b 100%);
+  box-shadow: 0 25px 40px -15px #014263; }
+  .dark-mode .rollDice .gameIcon {
+    position: absolute; }
+
+.coinFlip.light-mode {
+  background-image: linear-gradient(135deg, #f9b4bd 0%, #9573db 100%);
+  box-shadow: 0 25px 40px -15px #bb8ccf; }
+  .coinFlip.light-mode .gameIcon {
+    position: absolute; }
+.light-mode .coinFlip {
+  background-image: linear-gradient(135deg, #f9b4bd 0%, #9573db 100%);
+  box-shadow: 0 25px 40px -15px #bb8ccf; }
+  .light-mode .coinFlip .gameIcon {
+    position: absolute; }
+.coinFlip.dark-mode {
+  background-image: linear-gradient(135deg, #413921 0%, #452e04 100%);
+  box-shadow: 0 25px 40px -15px #443310; }
+  .coinFlip.dark-mode .gameIcon {
+    position: absolute; }
+.dark-mode .coinFlip {
+  background-image: linear-gradient(135deg, #413921 0%, #452e04 100%);
+  box-shadow: 0 25px 40px -15px #443310; }
+  .dark-mode .coinFlip .gameIcon {
+    position: absolute; }
+
+.drawCard.light-mode {
+  background-image: linear-gradient(-49deg, #736dff 0%, #a97fff 100%);
+  box-shadow: 0 25px 40px -15px #8573ff; }
+  .drawCard.light-mode .gameIcon {
+    position: absolute; }
+.light-mode .drawCard {
+  background-image: linear-gradient(-49deg, #736dff 0%, #a97fff 100%);
+  box-shadow: 0 25px 40px -15px #8573ff; }
+  .light-mode .drawCard .gameIcon {
+    position: absolute; }
+.drawCard.dark-mode {
+  background-image: linear-gradient(135deg, #23122c 0%, #865e96 100%);
+  box-shadow: 0 25px 40px -15px #5e3f6b; }
+  .drawCard.dark-mode .gameIcon {
+    position: absolute; }
+.dark-mode .drawCard {
+  background-image: linear-gradient(135deg, #23122c 0%, #865e96 100%);
+  box-shadow: 0 25px 40px -15px #5e3f6b; }
+  .dark-mode .drawCard .gameIcon {
+    position: absolute; }
+
+.brackets.light-mode {
+  background-image: linear-gradient(134deg, #66e496 0%, #00c29c 100%);
+  box-shadow: 0 25px 40px -15px #28cf99; }
+  .brackets.light-mode .gameIcon {
+    position: absolute; }
+.light-mode .brackets {
+  background-image: linear-gradient(134deg, #66e496 0%, #00c29c 100%);
+  box-shadow: 0 25px 40px -15px #28cf99; }
+  .light-mode .brackets .gameIcon {
+    position: absolute; }
+.brackets.dark-mode {
+  background-image: linear-gradient(135deg, #0f4038 0%, #1e715f 100%);
+  box-shadow: 0 25px 40px -15px #186051; }
+  .brackets.dark-mode .gameIcon {
+    position: absolute; }
+.dark-mode .brackets {
+  background-image: linear-gradient(135deg, #0f4038 0%, #1e715f 100%);
+  box-shadow: 0 25px 40px -15px #186051; }
+  .dark-mode .brackets .gameIcon {
+    position: absolute; }
+
+.teamMaker.light-mode {
+  background-image: linear-gradient(134deg, #5f6dff 0%, #4ebcfa 100%);
+  box-shadow: 0 25px 40px -15px #54a1fc; }
+  .teamMaker.light-mode .gameIcon {
+    position: absolute; }
+.light-mode .teamMaker {
+  background-image: linear-gradient(134deg, #5f6dff 0%, #4ebcfa 100%);
+  box-shadow: 0 25px 40px -15px #54a1fc; }
+  .light-mode .teamMaker .gameIcon {
+    position: absolute; }
+.teamMaker.dark-mode {
+  background-image: linear-gradient(135deg, #131527 0%, #444fd2 100%);
+  box-shadow: 0 25px 40px -15px #3740a7; }
+  .teamMaker.dark-mode .gameIcon {
+    position: absolute; }
+.dark-mode .teamMaker {
+  background-image: linear-gradient(135deg, #131527 0%, #444fd2 100%);
+  box-shadow: 0 25px 40px -15px #3740a7; }
+  .dark-mode .teamMaker .gameIcon {
+    position: absolute; }
+
+.roulette.light-mode {
+  background-image: linear-gradient(135deg, #ff8bf1 0%, #ff7171 100%);
+  box-shadow: 0 25px 40px -15px #ff7ba2; }
+  .roulette.light-mode .gameIcon {
+    position: fixed; }
+.light-mode .roulette {
+  background-image: linear-gradient(135deg, #ff8bf1 0%, #ff7171 100%);
+  box-shadow: 0 25px 40px -15px #ff7ba2; }
+  .light-mode .roulette .gameIcon {
+    position: fixed; }
+.roulette.dark-mode {
+  background-image: linear-gradient(135deg, #430e2d 0%, #ba4482 100%);
+  box-shadow: 0 25px 40px -15px #8f3063; }
+  .roulette.dark-mode .gameIcon {
+    position: fixed; }
+.dark-mode .roulette {
+  background-image: linear-gradient(135deg, #430e2d 0%, #ba4482 100%);
+  box-shadow: 0 25px 40px -15px #8f3063; }
+  .dark-mode .roulette .gameIcon {
+    position: fixed; }
+
+.russianRoulette.light-mode {
+  background-image: linear-gradient(135deg, #f5d368 0%, #ff7c2d 100%);
+  box-shadow: 0 25px 40px -15px #faa347; }
+  .russianRoulette.light-mode .gameIcon {
+    position: fixed; }
+.light-mode .russianRoulette {
+  background-image: linear-gradient(135deg, #f5d368 0%, #ff7c2d 100%);
+  box-shadow: 0 25px 40px -15px #faa347; }
+  .light-mode .russianRoulette .gameIcon {
+    position: fixed; }
+.russianRoulette.dark-mode {
+  background-image: linear-gradient(135deg, #433831 0%, #ad6700 100%);
+  box-shadow: 0 25px 40px -15px #8a5710; }
+  .russianRoulette.dark-mode .gameIcon {
+    position: fixed; }
+.dark-mode .russianRoulette {
+  background-image: linear-gradient(135deg, #433831 0%, #ad6700 100%);
+  box-shadow: 0 25px 40px -15px #8a5710; }
+  .dark-mode .russianRoulette .gameIcon {
+    position: fixed; }
 
 /*# sourceMappingURL=index.css.map */
