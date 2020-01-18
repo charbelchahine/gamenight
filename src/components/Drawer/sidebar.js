@@ -1,11 +1,8 @@
 import React from 'react';
 import { IconButton, SwipeableDrawer } from '@material-ui/core';
-import T from 'i18n-react';
-import Link from '../Link/link';
-
 import Menu from '../../assets/svg/menu.svg';
 
-const Drawer = () => {
+const Sidebar = () => {
     const [openDrawer, setDrawerOpen] = React.useState(false);
     const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
@@ -19,36 +16,21 @@ const Drawer = () => {
     const mobileNavContents = (
         <div
             role="presentation"
-            className="drawerContents"
+            className="mobileNav"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
-            <Link to="/">{T.translate('home.title')}</Link>
-            <Link to="/about">{T.translate('about.title')}</Link>
-            <Link
-                to="/contact"
-                state={{
-                    modal: true,
-                }}
-            >
-                {T.translate('contact.title')}
-            </Link>
+            hello
         </div>
     );
 
     return (
-        <>
-            <IconButton
-                aria-label="menu"
-                classes={{ root: 'navIconButton' }}
-                color="inherit"
-                onClick={toggleDrawer(true)}
-            >
+        <div className="mobileMenu">
+            <IconButton aria-label="menu" className="mobileNavToggle" onClick={toggleDrawer(true)}>
                 <Menu />
             </IconButton>
             <SwipeableDrawer
                 open={openDrawer}
-                classes={{ paper: 'drawer' }}
                 disableDiscovery={iOS}
                 onOpen={toggleDrawer(true)}
                 onClose={toggleDrawer(false)}
@@ -56,8 +38,8 @@ const Drawer = () => {
             >
                 {mobileNavContents}
             </SwipeableDrawer>
-        </>
+        </div>
     );
 };
 
-export default Drawer;
+export default Sidebar;

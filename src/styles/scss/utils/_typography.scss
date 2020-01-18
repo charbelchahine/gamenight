@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
+
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$black: 900;
+
+// Import fonts from /static/fonts folder
 @mixin font-weight($name, $weight: '') {
     $space-weight: ' ' + $weight;
     $dash-weight: '-' + $weight;
@@ -22,4 +32,4 @@
 }
 
 // Include your fonts here
-@include font('roboto');
+@include font('neutratext');
