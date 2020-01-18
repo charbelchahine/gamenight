@@ -5,18 +5,10 @@ html {
 body {
     overflow-x: hidden;
     position: relative;
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 0 50px;
     @include themed {
         background-color: t(backgroundColor);
     }
-}
-
-#___gatsby {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.content {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
 }

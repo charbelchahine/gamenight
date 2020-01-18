@@ -1,22 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Drawer from '../Drawer/drawer';
-import Logo from '../../assets/images/logo.svg';
 
-const Header = ({ children }) => (
-    <header className="content">
-        <Drawer />
-        <Logo />
-        <div className="navRightHandSide">{children}</div>
+import Drawer from '../Drawer/drawer';
+import Lang from '../Lang/lang';
+import ThemeToggle from '../ThemeToggle/themeToggle';
+
+import Logo from '../../assets/svg/logo.svg';
+
+const Header = ({ path }) => (
+    <header>
+        <nav>
+            <div className="navLHS">
+                <Drawer />
+            </div>
+            <Logo className="navLogo" />
+            <div className="navRHS">
+                <Lang path={path} />
+                <ThemeToggle />
+            </div>
+        </nav>
+        <Logo className="headerLogo" />
     </header>
 );
 
 Header.propTypes = {
-    children: PropTypes.node,
-};
-
-Header.defaultProps = {
-    children: '',
+    path: PropTypes.string.isRequired,
 };
 
 export default Header;

@@ -1,0 +1,15 @@
+.drawer {
+    width: 300px;
+    @include themed {
+        color: t(linkColor);
+        background-color: t(backgroundColor);
+    }
+    .drawerContents {
+        display: flex;
+        flex-direction: column;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
