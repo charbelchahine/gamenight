@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Sidebar from '../Sidebar/sidebar';
+import Drawer from '../Drawer/drawer';
 import Logo from '../../assets/images/logo.svg';
 
 const Header = ({ children }) => (
     <header className="content">
-        <Sidebar />
+        <Drawer />
         <Logo />
         <div className="navRightHandSide">{children}</div>
     </header>

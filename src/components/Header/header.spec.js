@@ -15,11 +15,6 @@ describe('Header', () => {
         expect(wrapper.exists()).toBe(true);
     });
 
-    it('should contain the sidebar + logo', () => {
-        expect(wrapper.find('Sidebar').exists()).toBe(true);
-        expect(wrapper.find('.navLogo').exists()).toBe(true);
-    });
-
     it('should contain children', () => {
         expect(wrapper.find('#headerChildrenTest').exists()).toBe(true);
     });
