@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import T from 'i18n-react';
 import Helmet from 'react-helmet';
 
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import Layout from '../components/Layout/layout';
-
 import '../styles/css/index.css';
 
 const seo = {
@@ -15,11 +12,10 @@ const seo = {
     class: 'homepage', // adds page specific styling
 };
 
-const IndexPage = ({ pageContext: { lang }, location: { pathname }, data }) => (
+const IndexPage = ({ pageContext: { lang }, location: { pathname } }) => (
     <Layout path={pathname} seo={seo}>
         {T.setTexts(lang)}
         <Helmet title={T.translate('home.title')} />
-        <Img fixed={data.Header.childImageSharp.fixed} alt="homeHeader" className="homeHeader" />
         <section className="content">
             <h1>{T.translate('home.welcome')}</h1>
             <p>
@@ -40,13 +36,6 @@ const IndexPage = ({ pageContext: { lang }, location: { pathname }, data }) => (
 );
 
 IndexPage.propTypes = {
-    data: PropTypes.shape({
-        Header: PropTypes.shape({
-            childImageSharp: PropTypes.shape({
-                fixed: PropTypes.shape({}),
-            }),
-        }),
-    }),
     pageContext: PropTypes.shape({
         lang: PropTypes.shape({}),
     }),
@@ -56,25 +45,8 @@ IndexPage.propTypes = {
 };
 
 IndexPage.defaultProps = {
-    data: {},
     pageContext: {},
     location: {},
 };
 
 export default IndexPage;
-
-export const queryIndex = graphql`
-    fragment fixedHeader on File {
-        childImageSharp {
-            fixed(width: 1400, height: 555, quality: 100) {
-                ...GatsbyImageSharpFixed_withWebp
-            }
-        }
-    }
-
-    query IndexImages {
-        Header: file(relativePath: { eq: "assets/images/homeHeader.png" }) {
-            ...fixedHeader
-        }
-    }
-`;

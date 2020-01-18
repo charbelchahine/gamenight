@@ -1,6 +1,9 @@
 import React from 'react';
 import { IconButton, SwipeableDrawer } from '@material-ui/core';
-import Menu from '../../assets/images/menu.svg';
+import T from 'i18n-react';
+import Link from '../Link/link';
+
+import Menu from '../../assets/svg/menu.svg';
 
 const Drawer = () => {
     const [openDrawer, setDrawerOpen] = React.useState(false);
@@ -16,21 +19,35 @@ const Drawer = () => {
     const mobileNavContents = (
         <div
             role="presentation"
-            className="mobileNav"
+            className="drawerContents"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
-            hello
+            <Link to="/">{T.translate('home.title')}</Link>
+            <Link
+                to="/contact"
+                state={{
+                    modal: true,
+                }}
+            >
+                {T.translate('contact.title')}
+            </Link>
         </div>
     );
 
     return (
         <>
-            <IconButton aria-label="menu" className="mobileNavToggle" onClick={toggleDrawer(true)}>
+            <IconButton
+                aria-label="menu"
+                classes={{ root: 'navIconButton' }}
+                color="inherit"
+                onClick={toggleDrawer(true)}
+            >
                 <Menu />
             </IconButton>
             <SwipeableDrawer
                 open={openDrawer}
+                classes={{ paper: 'drawer' }}
                 disableDiscovery={iOS}
                 onOpen={toggleDrawer(true)}
                 onClose={toggleDrawer(false)}

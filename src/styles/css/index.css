@@ -317,53 +317,97 @@ html {
 
 body {
   overflow-x: hidden;
-  position: relative; }
-  body.light-mode {
-    background-color: white; }
-  .light-mode body {
-    background-color: white; }
-  body.dark-mode {
-    background-color: black; }
-  .dark-mode body {
-    background-color: black; }
-
-#___gatsby {
-  max-width: 1400px;
-  margin: 0 auto; }
-
-.content {
-  max-width: 1200px;
+  position: relative;
+  max-width: 930px;
   margin: 0 auto;
-  width: 100%; }
+  padding: 0 50px; }
+  body.light-mode {
+    background-color: #f8f8f8; }
+  .light-mode body {
+    background-color: #f8f8f8; }
+  body.dark-mode {
+    background-color: #1a1a33; }
+  .dark-mode body {
+    background-color: #1a1a33; }
 
 header {
   display: flex;
-  justify-content: space-between; }
+  align-items: center;
+  flex-direction: column; }
+  header.light-mode {
+    color: #240c6d; }
+  .light-mode header {
+    color: #240c6d; }
+  header.dark-mode {
+    color: #ffffff; }
+  .dark-mode header {
+    color: #ffffff; }
+  header .headerLogo {
+    width: 191px;
+    height: 101px;
+    margin-bottom: 60px; }
+    @media (min-width: 600px) {
+      header .headerLogo {
+        width: 238px;
+        height: 126px;
+        margin-bottom: 75px; } }
 
-.navLogo,
-.navLinks {
-  display: none; }
-
-.navRightHandSide {
-  display: flex; }
-
-.langSelector {
+nav {
+  width: 100%;
   display: flex;
-  flex-direction: row; }
+  margin: 50px 0;
+  align-items: center; }
+  nav .navLHS {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; }
+  nav .navLogo {
+    display: none; }
+    @media (min-width: 600px) {
+      nav .navLogo {
+        flex: 1;
+        width: 94px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        visibility: hidden; } }
+  nav .navRHS {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; }
+  nav .navIconButton:hover.light-mode {
+    background-color: rgba(36, 12, 109, 0.2); }
+  .light-mode nav .navIconButton:hover {
+    background-color: rgba(36, 12, 109, 0.2); }
+  nav .navIconButton:hover.dark-mode {
+    background-color: rgba(255, 255, 255, 0.2); }
+  .dark-mode nav .navIconButton:hover {
+    background-color: rgba(255, 255, 255, 0.2); }
 
-@media (min-width: 768px) {
-  .navLinks {
-    display: flex; }
-    .navLinks a.light-mode {
-      color: black; }
-    .light-mode .navLinks a {
-      color: black; }
-    .navLinks a.dark-mode {
-      color: white; }
-    .dark-mode .navLinks a {
-      color: white; }
+.drawer {
+  width: 300px; }
+  .drawer.light-mode {
+    color: #240c6d;
+    background-color: #f8f8f8; }
+  .light-mode .drawer {
+    color: #240c6d;
+    background-color: #f8f8f8; }
+  .drawer.dark-mode {
+    color: #ffffff;
+    background-color: #1a1a33; }
+  .dark-mode .drawer {
+    color: #ffffff;
+    background-color: #1a1a33; }
+  .drawer .drawerContents {
+    display: flex;
+    flex-direction: column; }
+    .drawer .drawerContents a {
+      color: inherit;
+      text-decoration: none; }
 
-  .navLogo {
-    display: contents; } }
+.langSelectorOptions .langSelectorItem:hover,
+.langSelectorOptions .langSelectorItem:focus {
+  color: #240c6d;
+  background-color: rgba(36, 12, 109, 0.2); }
 
 /*# sourceMappingURL=index.css.map */

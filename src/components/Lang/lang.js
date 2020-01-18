@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import T from 'i18n-react';
 import { navigate } from 'gatsby';
@@ -6,7 +6,7 @@ import { Menu, MenuItem, IconButton } from '@material-ui/core/';
 import LanguageIcon from '@material-ui/icons/Language';
 import i18n from '../../i18n/config/i18n';
 
-class Lang extends React.Component {
+class Lang extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -38,11 +38,13 @@ class Lang extends React.Component {
     render() {
         const { anchorEl } = this.state;
         return (
-            <div className="langSelector">
+            <>
                 <IconButton
                     aria-haspopup="true"
                     aria-label="Language Selector"
                     aria-controls="lang-selector"
+                    classes={{ root: 'navIconButton' }}
+                    color="inherit"
                     onClick={this.handleOpenMenu}
                 >
                     <LanguageIcon />
@@ -52,11 +54,16 @@ class Lang extends React.Component {
                     id="lang-selector"
                     anchorEl={anchorEl}
                     open={Boolean(anchorEl)}
+                    getContentAnchorEl={null}
                     onClose={this.handleCloseMenu}
+                    classes={{ list: 'langSelectorOptions' }}
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                    transformOrigin={{ vertical: 'top', horizontal: 'center' }}
                 >
                     {Object.keys(i18n).map(lang => (
                         <MenuItem
                             key={lang}
+                            classes={{ root: 'langSelectorItem' }}
                             data-value={i18n[lang].path}
                             onClick={this.handleLangChange}
                         >
@@ -64,7 +71,7 @@ class Lang extends React.Component {
                         </MenuItem>
                     ))}
                 </Menu>
-            </div>
+            </>
         );
     }
 }
