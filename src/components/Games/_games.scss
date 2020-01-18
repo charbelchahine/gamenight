@@ -1,0 +1,114 @@
+.games {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    a {
+        text-decoration: none;
+    }
+}
+
+$gamePreviewPadding: 25px;
+
+.gamePreview {
+    display: flex;
+    -ms-flex: auto;
+    flex-basis: 100%;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: $gamePreviewPadding;
+    width: 275px - 2 * $gamePreviewPadding;
+    height: 165px - 2 * $gamePreviewPadding;
+    @include md {
+        flex-basis: 38%;
+        margin-bottom: 50px;
+    }
+    @include rwd(700) {
+        flex-basis: 40%;
+    }
+    @include rwd(800) {
+        flex-basis: 25%;
+    }
+    @include lg {
+        flex-basis: 24%;
+    }
+    .gameName {
+        font-size: 27px;
+        color: #ffffff;
+        max-width: 145px;
+        margin: 10px auto auto 0;
+        font-family: $neutraFont;
+    }
+}
+
+.rollDice {
+    @include themed {
+        background-image: t(rollDice);
+        box-shadow: t(rollDiceShadow);
+        .gameIcon {
+            position: absolute;
+        }
+    }
+}
+
+.coinFlip {
+    @include themed {
+        background-image: t(coinFlip);
+        box-shadow: t(coinFlipShadow);
+        .gameIcon {
+            position: absolute;
+        }
+    }
+}
+
+.drawCard {
+    @include themed {
+        background-image: t(drawCard);
+        box-shadow: t(drawCardShadow);
+        .gameIcon {
+            position: absolute;
+        }
+    }
+}
+
+.brackets {
+    @include themed {
+        background-image: t(brackets);
+        box-shadow: t(bracketsShadow);
+        .gameIcon {
+            position: absolute;
+        }
+    }
+}
+
+.teamMaker {
+    @include themed {
+        background-image: t(teamMaker);
+        box-shadow: t(teamMakerShadow);
+        .gameIcon {
+            position: absolute;
+        }
+    }
+}
+
+.roulette {
+    @include themed {
+        background-image: t(roulette);
+        box-shadow: t(rouletteShadow);
+        .gameIcon {
+            position: fixed;
+        }
+    }
+}
+
+.russianRoulette {
+    @include themed {
+        background-image: t(russianRoulette);
+        box-shadow: t(russianRouletteShadow);
+        .gameIcon {
+            position: fixed;
+        }
+    }
+}

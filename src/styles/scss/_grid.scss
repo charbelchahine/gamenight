@@ -7,7 +7,10 @@ body {
     position: relative;
     max-width: 930px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 20px;
+    @include rwd(375) {
+        padding: 0 50px;
+    }
     @include themed {
         background-color: t(backgroundColor);
     }

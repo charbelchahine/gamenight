@@ -25,14 +25,7 @@ const Drawer = () => {
         >
             <Link to="/">{T.translate('home.title')}</Link>
             <Link to="/about">{T.translate('about.title')}</Link>
-            <Link
-                to="/contact"
-                state={{
-                    modal: true,
-                }}
-            >
-                {T.translate('contact.title')}
-            </Link>
+            <Link to="/contact">{T.translate('contact.title')}</Link>
         </div>
     );
 
