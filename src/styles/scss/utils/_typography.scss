@@ -35,3 +35,9 @@ $black: 900;
 @include font('neutratext');
 
 $neutraFont: NeutraText-bold, Arial, Helvetica, sans-serif;
+
+%gameName {
+    font-size: 27px;
+    color: #ffffff;
+    font-family: $neutraFont;
+}

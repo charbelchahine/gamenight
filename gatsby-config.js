@@ -59,8 +59,9 @@ module.exports = {
             options: {
                 appElement: '#___gatsby',
                 modalProps: {
-                    overlayClassName: 'gameModal',
-                    className: 'gameModalContent',
+                    className: 'gameModal',
+                    bodyOpenClassName: 'openModal',
+                    overlayClassName: 'gameModalOverlay',
                 },
             },
         },

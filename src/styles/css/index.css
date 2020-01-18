@@ -14,6 +14,11 @@
 @font-face {
   font-family: neutratext thin;
   src: url("/../../fonts/neutratext-thin.woff2") format("woff2"), url("/../../fonts/neutratext-thin.woff") format("woff"), url("/../../fonts/neutratext-thin.ttf") format("truetype"); }
+.gamePreview .gameName, .rollDiceContents .gameName, .coinFlipContents .gameName, .drawCardContents .gameName, .bracketsContents .gameName, .teamMakerContents .gameName, .rouletteContents .gameName, .russianRouletteContents .gameName {
+  font-size: 27px;
+  color: #ffffff;
+  font-family: NeutraText-bold, Arial, Helvetica, sans-serif; }
+
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -334,6 +339,47 @@ body {
   .dark-mode body {
     background-color: #1a1a33; }
 
+.gameModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.gameModal, .nonModal .gameContents {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  outline: none;
+  min-height: 200px;
+  background: #ffffff;
+  padding: 30px; }
+  @media (min-width: 600px) {
+    .gameModal, .nonModal .gameContents {
+      left: 50%;
+      top: 150px;
+      border-radius: 8px;
+      transform: translateX(-50%);
+      width: 540px;
+      max-width: 540px; } }
+  .gameModal .closeButton, .nonModal .gameContents .closeButton {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    box-shadow: 0 2px 16px 0 #e0e2e4; }
+
+.nonModal .gameContents {
+  position: unset;
+  margin: 0 auto;
+  transform: none;
+  width: unset;
+  border-radius: 8px; }
+
 header {
   display: flex;
   align-items: center;
@@ -388,6 +434,16 @@ nav {
   .dark-mode nav .navIconButton:hover {
     background-color: rgba(255, 255, 255, 0.2); }
 
+.gamePage header .headerLogo {
+  display: none; }
+@media (min-width: 600px) {
+  .gamePage header .navLogo {
+    visibility: visible; } }
+.gamePage .openModal .headerLogo {
+  display: flex; }
+.gamePage .openModal .navLogo {
+  visibility: hidden; }
+
 .drawer {
   width: 300px; }
   .drawer.light-mode {
@@ -418,186 +474,213 @@ nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between; }
-  .games a {
-    text-decoration: none; }
+  .games .gameLink {
+    display: flex;
+    -ms-flex: auto;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    text-decoration: none;
+    width: 275px; }
+    @media (min-width: 600px) {
+      .games .gameLink {
+        flex-basis: 48%;
+        margin-bottom: 50px; } }
+    @media (min-width: 960px) {
+      .games .gameLink {
+        flex-basis: 30%; } }
 
 .gamePreview {
   display: flex;
-  -ms-flex: auto;
-  flex-basis: 100%;
   position: relative;
   border-radius: 8px;
-  margin-bottom: 20px;
   align-items: center;
   justify-content: center;
   padding: 25px;
-  width: 225px;
+  width: 100%;
   height: 115px; }
-  @media (min-width: 600px) {
-    .gamePreview {
-      flex-basis: 38%;
-      margin-bottom: 50px; } }
-  @media (min-width: 700px) {
-    .gamePreview {
-      flex-basis: 40%; } }
-  @media (min-width: 800px) {
-    .gamePreview {
-      flex-basis: 25%; } }
-  @media (min-width: 960px) {
-    .gamePreview {
-      flex-basis: 24%; } }
   .gamePreview .gameName {
-    font-size: 27px;
-    color: #ffffff;
     max-width: 145px;
-    margin: 10px auto auto 0;
-    font-family: NeutraText-bold, Arial, Helvetica, sans-serif; }
+    margin: 10px auto auto 0; }
 
-.rollDice.light-mode {
+.rollDice.light-mode, .rollDicePage .light-mode.gameModal, .rollDicePage .nonModal .light-mode.gameContents, .nonModal .rollDicePage .light-mode.gameContents, .nonModal .light-mode.rollDiceContents {
   background-image: linear-gradient(134deg, #44dec5 0%, #4ebcfa 100%);
   box-shadow: 0 25px 40px -15px #4acae4; }
-  .rollDice.light-mode .gameIcon {
+  .rollDice.light-mode .gameIcon, .rollDicePage .light-mode.gameModal .gameIcon, .rollDicePage .nonModal .light-mode.gameContents .gameIcon, .nonModal .rollDicePage .light-mode.gameContents .gameIcon, .nonModal .light-mode.rollDiceContents .gameIcon {
     position: absolute; }
-.light-mode .rollDice {
+.light-mode .rollDice, .light-mode .rollDicePage .gameModal, .rollDicePage .light-mode .gameModal, .light-mode .rollDicePage .nonModal .gameContents, .rollDicePage .nonModal .light-mode .gameContents, .light-mode .nonModal .rollDicePage .gameContents, .nonModal .rollDicePage .light-mode .gameContents, .light-mode .nonModal .rollDiceContents, .nonModal .light-mode .rollDiceContents {
   background-image: linear-gradient(134deg, #44dec5 0%, #4ebcfa 100%);
   box-shadow: 0 25px 40px -15px #4acae4; }
-  .light-mode .rollDice .gameIcon {
+  .light-mode .rollDice .gameIcon, .light-mode .rollDicePage .gameModal .gameIcon, .rollDicePage .light-mode .gameModal .gameIcon, .light-mode .rollDicePage .nonModal .gameContents .gameIcon, .rollDicePage .nonModal .light-mode .gameContents .gameIcon, .light-mode .nonModal .rollDicePage .gameContents .gameIcon, .nonModal .rollDicePage .light-mode .gameContents .gameIcon, .light-mode .nonModal .rollDiceContents .gameIcon, .nonModal .light-mode .rollDiceContents .gameIcon {
     position: absolute; }
-.rollDice.dark-mode {
+.rollDice.dark-mode, .rollDicePage .dark-mode.gameModal, .rollDicePage .nonModal .dark-mode.gameContents, .nonModal .rollDicePage .dark-mode.gameContents, .nonModal .dark-mode.rollDiceContents {
   background-image: linear-gradient(135deg, #031d22 0%, #00598b 100%);
   box-shadow: 0 25px 40px -15px #014263; }
-  .rollDice.dark-mode .gameIcon {
+  .rollDice.dark-mode .gameIcon, .rollDicePage .dark-mode.gameModal .gameIcon, .rollDicePage .nonModal .dark-mode.gameContents .gameIcon, .nonModal .rollDicePage .dark-mode.gameContents .gameIcon, .nonModal .dark-mode.rollDiceContents .gameIcon {
     position: absolute; }
-.dark-mode .rollDice {
+.dark-mode .rollDice, .dark-mode .rollDicePage .gameModal, .rollDicePage .dark-mode .gameModal, .dark-mode .rollDicePage .nonModal .gameContents, .rollDicePage .nonModal .dark-mode .gameContents, .dark-mode .nonModal .rollDicePage .gameContents, .nonModal .rollDicePage .dark-mode .gameContents, .dark-mode .nonModal .rollDiceContents, .nonModal .dark-mode .rollDiceContents {
   background-image: linear-gradient(135deg, #031d22 0%, #00598b 100%);
   box-shadow: 0 25px 40px -15px #014263; }
-  .dark-mode .rollDice .gameIcon {
+  .dark-mode .rollDice .gameIcon, .dark-mode .rollDicePage .gameModal .gameIcon, .rollDicePage .dark-mode .gameModal .gameIcon, .dark-mode .rollDicePage .nonModal .gameContents .gameIcon, .rollDicePage .nonModal .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .rollDicePage .gameContents .gameIcon, .nonModal .rollDicePage .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .rollDiceContents .gameIcon, .nonModal .dark-mode .rollDiceContents .gameIcon {
     position: absolute; }
 
-.coinFlip.light-mode {
+.coinFlip.light-mode, .coinFlipPage .light-mode.gameModal, .coinFlipPage .nonModal .light-mode.gameContents, .nonModal .coinFlipPage .light-mode.gameContents, .nonModal .light-mode.coinFlipContents {
   background-image: linear-gradient(135deg, #f9b4bd 0%, #9573db 100%);
   box-shadow: 0 25px 40px -15px #bb8ccf; }
-  .coinFlip.light-mode .gameIcon {
+  .coinFlip.light-mode .gameIcon, .coinFlipPage .light-mode.gameModal .gameIcon, .coinFlipPage .nonModal .light-mode.gameContents .gameIcon, .nonModal .coinFlipPage .light-mode.gameContents .gameIcon, .nonModal .light-mode.coinFlipContents .gameIcon {
     position: absolute; }
-.light-mode .coinFlip {
+.light-mode .coinFlip, .light-mode .coinFlipPage .gameModal, .coinFlipPage .light-mode .gameModal, .light-mode .coinFlipPage .nonModal .gameContents, .coinFlipPage .nonModal .light-mode .gameContents, .light-mode .nonModal .coinFlipPage .gameContents, .nonModal .coinFlipPage .light-mode .gameContents, .light-mode .nonModal .coinFlipContents, .nonModal .light-mode .coinFlipContents {
   background-image: linear-gradient(135deg, #f9b4bd 0%, #9573db 100%);
   box-shadow: 0 25px 40px -15px #bb8ccf; }
-  .light-mode .coinFlip .gameIcon {
+  .light-mode .coinFlip .gameIcon, .light-mode .coinFlipPage .gameModal .gameIcon, .coinFlipPage .light-mode .gameModal .gameIcon, .light-mode .coinFlipPage .nonModal .gameContents .gameIcon, .coinFlipPage .nonModal .light-mode .gameContents .gameIcon, .light-mode .nonModal .coinFlipPage .gameContents .gameIcon, .nonModal .coinFlipPage .light-mode .gameContents .gameIcon, .light-mode .nonModal .coinFlipContents .gameIcon, .nonModal .light-mode .coinFlipContents .gameIcon {
     position: absolute; }
-.coinFlip.dark-mode {
+.coinFlip.dark-mode, .coinFlipPage .dark-mode.gameModal, .coinFlipPage .nonModal .dark-mode.gameContents, .nonModal .coinFlipPage .dark-mode.gameContents, .nonModal .dark-mode.coinFlipContents {
   background-image: linear-gradient(135deg, #413921 0%, #452e04 100%);
   box-shadow: 0 25px 40px -15px #443310; }
-  .coinFlip.dark-mode .gameIcon {
+  .coinFlip.dark-mode .gameIcon, .coinFlipPage .dark-mode.gameModal .gameIcon, .coinFlipPage .nonModal .dark-mode.gameContents .gameIcon, .nonModal .coinFlipPage .dark-mode.gameContents .gameIcon, .nonModal .dark-mode.coinFlipContents .gameIcon {
     position: absolute; }
-.dark-mode .coinFlip {
+.dark-mode .coinFlip, .dark-mode .coinFlipPage .gameModal, .coinFlipPage .dark-mode .gameModal, .dark-mode .coinFlipPage .nonModal .gameContents, .coinFlipPage .nonModal .dark-mode .gameContents, .dark-mode .nonModal .coinFlipPage .gameContents, .nonModal .coinFlipPage .dark-mode .gameContents, .dark-mode .nonModal .coinFlipContents, .nonModal .dark-mode .coinFlipContents {
   background-image: linear-gradient(135deg, #413921 0%, #452e04 100%);
   box-shadow: 0 25px 40px -15px #443310; }
-  .dark-mode .coinFlip .gameIcon {
+  .dark-mode .coinFlip .gameIcon, .dark-mode .coinFlipPage .gameModal .gameIcon, .coinFlipPage .dark-mode .gameModal .gameIcon, .dark-mode .coinFlipPage .nonModal .gameContents .gameIcon, .coinFlipPage .nonModal .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .coinFlipPage .gameContents .gameIcon, .nonModal .coinFlipPage .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .coinFlipContents .gameIcon, .nonModal .dark-mode .coinFlipContents .gameIcon {
     position: absolute; }
 
-.drawCard.light-mode {
+.drawCard.light-mode, .drawCardPage .light-mode.gameModal, .drawCardPage .nonModal .light-mode.gameContents, .nonModal .drawCardPage .light-mode.gameContents, .nonModal .light-mode.drawCardContents {
   background-image: linear-gradient(-49deg, #736dff 0%, #a97fff 100%);
   box-shadow: 0 25px 40px -15px #8573ff; }
-  .drawCard.light-mode .gameIcon {
+  .drawCard.light-mode .gameIcon, .drawCardPage .light-mode.gameModal .gameIcon, .drawCardPage .nonModal .light-mode.gameContents .gameIcon, .nonModal .drawCardPage .light-mode.gameContents .gameIcon, .nonModal .light-mode.drawCardContents .gameIcon {
     position: absolute; }
-.light-mode .drawCard {
+.light-mode .drawCard, .light-mode .drawCardPage .gameModal, .drawCardPage .light-mode .gameModal, .light-mode .drawCardPage .nonModal .gameContents, .drawCardPage .nonModal .light-mode .gameContents, .light-mode .nonModal .drawCardPage .gameContents, .nonModal .drawCardPage .light-mode .gameContents, .light-mode .nonModal .drawCardContents, .nonModal .light-mode .drawCardContents {
   background-image: linear-gradient(-49deg, #736dff 0%, #a97fff 100%);
   box-shadow: 0 25px 40px -15px #8573ff; }
-  .light-mode .drawCard .gameIcon {
+  .light-mode .drawCard .gameIcon, .light-mode .drawCardPage .gameModal .gameIcon, .drawCardPage .light-mode .gameModal .gameIcon, .light-mode .drawCardPage .nonModal .gameContents .gameIcon, .drawCardPage .nonModal .light-mode .gameContents .gameIcon, .light-mode .nonModal .drawCardPage .gameContents .gameIcon, .nonModal .drawCardPage .light-mode .gameContents .gameIcon, .light-mode .nonModal .drawCardContents .gameIcon, .nonModal .light-mode .drawCardContents .gameIcon {
     position: absolute; }
-.drawCard.dark-mode {
+.drawCard.dark-mode, .drawCardPage .dark-mode.gameModal, .drawCardPage .nonModal .dark-mode.gameContents, .nonModal .drawCardPage .dark-mode.gameContents, .nonModal .dark-mode.drawCardContents {
   background-image: linear-gradient(135deg, #23122c 0%, #865e96 100%);
   box-shadow: 0 25px 40px -15px #5e3f6b; }
-  .drawCard.dark-mode .gameIcon {
+  .drawCard.dark-mode .gameIcon, .drawCardPage .dark-mode.gameModal .gameIcon, .drawCardPage .nonModal .dark-mode.gameContents .gameIcon, .nonModal .drawCardPage .dark-mode.gameContents .gameIcon, .nonModal .dark-mode.drawCardContents .gameIcon {
     position: absolute; }
-.dark-mode .drawCard {
+.dark-mode .drawCard, .dark-mode .drawCardPage .gameModal, .drawCardPage .dark-mode .gameModal, .dark-mode .drawCardPage .nonModal .gameContents, .drawCardPage .nonModal .dark-mode .gameContents, .dark-mode .nonModal .drawCardPage .gameContents, .nonModal .drawCardPage .dark-mode .gameContents, .dark-mode .nonModal .drawCardContents, .nonModal .dark-mode .drawCardContents {
   background-image: linear-gradient(135deg, #23122c 0%, #865e96 100%);
   box-shadow: 0 25px 40px -15px #5e3f6b; }
-  .dark-mode .drawCard .gameIcon {
+  .dark-mode .drawCard .gameIcon, .dark-mode .drawCardPage .gameModal .gameIcon, .drawCardPage .dark-mode .gameModal .gameIcon, .dark-mode .drawCardPage .nonModal .gameContents .gameIcon, .drawCardPage .nonModal .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .drawCardPage .gameContents .gameIcon, .nonModal .drawCardPage .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .drawCardContents .gameIcon, .nonModal .dark-mode .drawCardContents .gameIcon {
     position: absolute; }
 
-.brackets.light-mode {
+.brackets.light-mode, .bracketsPage .light-mode.gameModal, .bracketsPage .nonModal .light-mode.gameContents, .nonModal .bracketsPage .light-mode.gameContents, .nonModal .light-mode.bracketsContents {
   background-image: linear-gradient(134deg, #66e496 0%, #00c29c 100%);
   box-shadow: 0 25px 40px -15px #28cf99; }
-  .brackets.light-mode .gameIcon {
+  .brackets.light-mode .gameIcon, .bracketsPage .light-mode.gameModal .gameIcon, .bracketsPage .nonModal .light-mode.gameContents .gameIcon, .nonModal .bracketsPage .light-mode.gameContents .gameIcon, .nonModal .light-mode.bracketsContents .gameIcon {
     position: absolute; }
-.light-mode .brackets {
+.light-mode .brackets, .light-mode .bracketsPage .gameModal, .bracketsPage .light-mode .gameModal, .light-mode .bracketsPage .nonModal .gameContents, .bracketsPage .nonModal .light-mode .gameContents, .light-mode .nonModal .bracketsPage .gameContents, .nonModal .bracketsPage .light-mode .gameContents, .light-mode .nonModal .bracketsContents, .nonModal .light-mode .bracketsContents {
   background-image: linear-gradient(134deg, #66e496 0%, #00c29c 100%);
   box-shadow: 0 25px 40px -15px #28cf99; }
-  .light-mode .brackets .gameIcon {
+  .light-mode .brackets .gameIcon, .light-mode .bracketsPage .gameModal .gameIcon, .bracketsPage .light-mode .gameModal .gameIcon, .light-mode .bracketsPage .nonModal .gameContents .gameIcon, .bracketsPage .nonModal .light-mode .gameContents .gameIcon, .light-mode .nonModal .bracketsPage .gameContents .gameIcon, .nonModal .bracketsPage .light-mode .gameContents .gameIcon, .light-mode .nonModal .bracketsContents .gameIcon, .nonModal .light-mode .bracketsContents .gameIcon {
     position: absolute; }
-.brackets.dark-mode {
+.brackets.dark-mode, .bracketsPage .dark-mode.gameModal, .bracketsPage .nonModal .dark-mode.gameContents, .nonModal .bracketsPage .dark-mode.gameContents, .nonModal .dark-mode.bracketsContents {
   background-image: linear-gradient(135deg, #0f4038 0%, #1e715f 100%);
   box-shadow: 0 25px 40px -15px #186051; }
-  .brackets.dark-mode .gameIcon {
+  .brackets.dark-mode .gameIcon, .bracketsPage .dark-mode.gameModal .gameIcon, .bracketsPage .nonModal .dark-mode.gameContents .gameIcon, .nonModal .bracketsPage .dark-mode.gameContents .gameIcon, .nonModal .dark-mode.bracketsContents .gameIcon {
     position: absolute; }
-.dark-mode .brackets {
+.dark-mode .brackets, .dark-mode .bracketsPage .gameModal, .bracketsPage .dark-mode .gameModal, .dark-mode .bracketsPage .nonModal .gameContents, .bracketsPage .nonModal .dark-mode .gameContents, .dark-mode .nonModal .bracketsPage .gameContents, .nonModal .bracketsPage .dark-mode .gameContents, .dark-mode .nonModal .bracketsContents, .nonModal .dark-mode .bracketsContents {
   background-image: linear-gradient(135deg, #0f4038 0%, #1e715f 100%);
   box-shadow: 0 25px 40px -15px #186051; }
-  .dark-mode .brackets .gameIcon {
+  .dark-mode .brackets .gameIcon, .dark-mode .bracketsPage .gameModal .gameIcon, .bracketsPage .dark-mode .gameModal .gameIcon, .dark-mode .bracketsPage .nonModal .gameContents .gameIcon, .bracketsPage .nonModal .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .bracketsPage .gameContents .gameIcon, .nonModal .bracketsPage .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .bracketsContents .gameIcon, .nonModal .dark-mode .bracketsContents .gameIcon {
     position: absolute; }
 
-.teamMaker.light-mode {
+.teamMaker.light-mode, .teamMakerPage .light-mode.gameModal, .teamMakerPage .nonModal .light-mode.gameContents, .nonModal .teamMakerPage .light-mode.gameContents, .nonModal .light-mode.teamMakerContents {
   background-image: linear-gradient(134deg, #5f6dff 0%, #4ebcfa 100%);
   box-shadow: 0 25px 40px -15px #54a1fc; }
-  .teamMaker.light-mode .gameIcon {
+  .teamMaker.light-mode .gameIcon, .teamMakerPage .light-mode.gameModal .gameIcon, .teamMakerPage .nonModal .light-mode.gameContents .gameIcon, .nonModal .teamMakerPage .light-mode.gameContents .gameIcon, .nonModal .light-mode.teamMakerContents .gameIcon {
     position: absolute; }
-.light-mode .teamMaker {
+.light-mode .teamMaker, .light-mode .teamMakerPage .gameModal, .teamMakerPage .light-mode .gameModal, .light-mode .teamMakerPage .nonModal .gameContents, .teamMakerPage .nonModal .light-mode .gameContents, .light-mode .nonModal .teamMakerPage .gameContents, .nonModal .teamMakerPage .light-mode .gameContents, .light-mode .nonModal .teamMakerContents, .nonModal .light-mode .teamMakerContents {
   background-image: linear-gradient(134deg, #5f6dff 0%, #4ebcfa 100%);
   box-shadow: 0 25px 40px -15px #54a1fc; }
-  .light-mode .teamMaker .gameIcon {
+  .light-mode .teamMaker .gameIcon, .light-mode .teamMakerPage .gameModal .gameIcon, .teamMakerPage .light-mode .gameModal .gameIcon, .light-mode .teamMakerPage .nonModal .gameContents .gameIcon, .teamMakerPage .nonModal .light-mode .gameContents .gameIcon, .light-mode .nonModal .teamMakerPage .gameContents .gameIcon, .nonModal .teamMakerPage .light-mode .gameContents .gameIcon, .light-mode .nonModal .teamMakerContents .gameIcon, .nonModal .light-mode .teamMakerContents .gameIcon {
     position: absolute; }
-.teamMaker.dark-mode {
+.teamMaker.dark-mode, .teamMakerPage .dark-mode.gameModal, .teamMakerPage .nonModal .dark-mode.gameContents, .nonModal .teamMakerPage .dark-mode.gameContents, .nonModal .dark-mode.teamMakerContents {
   background-image: linear-gradient(135deg, #131527 0%, #444fd2 100%);
   box-shadow: 0 25px 40px -15px #3740a7; }
-  .teamMaker.dark-mode .gameIcon {
+  .teamMaker.dark-mode .gameIcon, .teamMakerPage .dark-mode.gameModal .gameIcon, .teamMakerPage .nonModal .dark-mode.gameContents .gameIcon, .nonModal .teamMakerPage .dark-mode.gameContents .gameIcon, .nonModal .dark-mode.teamMakerContents .gameIcon {
     position: absolute; }
-.dark-mode .teamMaker {
+.dark-mode .teamMaker, .dark-mode .teamMakerPage .gameModal, .teamMakerPage .dark-mode .gameModal, .dark-mode .teamMakerPage .nonModal .gameContents, .teamMakerPage .nonModal .dark-mode .gameContents, .dark-mode .nonModal .teamMakerPage .gameContents, .nonModal .teamMakerPage .dark-mode .gameContents, .dark-mode .nonModal .teamMakerContents, .nonModal .dark-mode .teamMakerContents {
   background-image: linear-gradient(135deg, #131527 0%, #444fd2 100%);
   box-shadow: 0 25px 40px -15px #3740a7; }
-  .dark-mode .teamMaker .gameIcon {
+  .dark-mode .teamMaker .gameIcon, .dark-mode .teamMakerPage .gameModal .gameIcon, .teamMakerPage .dark-mode .gameModal .gameIcon, .dark-mode .teamMakerPage .nonModal .gameContents .gameIcon, .teamMakerPage .nonModal .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .teamMakerPage .gameContents .gameIcon, .nonModal .teamMakerPage .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .teamMakerContents .gameIcon, .nonModal .dark-mode .teamMakerContents .gameIcon {
     position: absolute; }
 
-.roulette.light-mode {
+.roulette.light-mode, .roulettePage .light-mode.gameModal, .roulettePage .nonModal .light-mode.gameContents, .nonModal .roulettePage .light-mode.gameContents, .nonModal .light-mode.rouletteContents {
   background-image: linear-gradient(135deg, #ff8bf1 0%, #ff7171 100%);
   box-shadow: 0 25px 40px -15px #ff7ba2; }
-  .roulette.light-mode .gameIcon {
-    position: fixed; }
-.light-mode .roulette {
+  .roulette.light-mode .gameIcon, .roulettePage .light-mode.gameModal .gameIcon, .roulettePage .nonModal .light-mode.gameContents .gameIcon, .nonModal .roulettePage .light-mode.gameContents .gameIcon, .nonModal .light-mode.rouletteContents .gameIcon {
+    position: absolute; }
+.light-mode .roulette, .light-mode .roulettePage .gameModal, .roulettePage .light-mode .gameModal, .light-mode .roulettePage .nonModal .gameContents, .roulettePage .nonModal .light-mode .gameContents, .light-mode .nonModal .roulettePage .gameContents, .nonModal .roulettePage .light-mode .gameContents, .light-mode .nonModal .rouletteContents, .nonModal .light-mode .rouletteContents {
   background-image: linear-gradient(135deg, #ff8bf1 0%, #ff7171 100%);
   box-shadow: 0 25px 40px -15px #ff7ba2; }
-  .light-mode .roulette .gameIcon {
-    position: fixed; }
-.roulette.dark-mode {
+  .light-mode .roulette .gameIcon, .light-mode .roulettePage .gameModal .gameIcon, .roulettePage .light-mode .gameModal .gameIcon, .light-mode .roulettePage .nonModal .gameContents .gameIcon, .roulettePage .nonModal .light-mode .gameContents .gameIcon, .light-mode .nonModal .roulettePage .gameContents .gameIcon, .nonModal .roulettePage .light-mode .gameContents .gameIcon, .light-mode .nonModal .rouletteContents .gameIcon, .nonModal .light-mode .rouletteContents .gameIcon {
+    position: absolute; }
+.roulette.dark-mode, .roulettePage .dark-mode.gameModal, .roulettePage .nonModal .dark-mode.gameContents, .nonModal .roulettePage .dark-mode.gameContents, .nonModal .dark-mode.rouletteContents {
   background-image: linear-gradient(135deg, #430e2d 0%, #ba4482 100%);
   box-shadow: 0 25px 40px -15px #8f3063; }
-  .roulette.dark-mode .gameIcon {
-    position: fixed; }
-.dark-mode .roulette {
+  .roulette.dark-mode .gameIcon, .roulettePage .dark-mode.gameModal .gameIcon, .roulettePage .nonModal .dark-mode.gameContents .gameIcon, .nonModal .roulettePage .dark-mode.gameContents .gameIcon, .nonModal .dark-mode.rouletteContents .gameIcon {
+    position: absolute; }
+.dark-mode .roulette, .dark-mode .roulettePage .gameModal, .roulettePage .dark-mode .gameModal, .dark-mode .roulettePage .nonModal .gameContents, .roulettePage .nonModal .dark-mode .gameContents, .dark-mode .nonModal .roulettePage .gameContents, .nonModal .roulettePage .dark-mode .gameContents, .dark-mode .nonModal .rouletteContents, .nonModal .dark-mode .rouletteContents {
   background-image: linear-gradient(135deg, #430e2d 0%, #ba4482 100%);
   box-shadow: 0 25px 40px -15px #8f3063; }
-  .dark-mode .roulette .gameIcon {
-    position: fixed; }
+  .dark-mode .roulette .gameIcon, .dark-mode .roulettePage .gameModal .gameIcon, .roulettePage .dark-mode .gameModal .gameIcon, .dark-mode .roulettePage .nonModal .gameContents .gameIcon, .roulettePage .nonModal .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .roulettePage .gameContents .gameIcon, .nonModal .roulettePage .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .rouletteContents .gameIcon, .nonModal .dark-mode .rouletteContents .gameIcon {
+    position: absolute; }
 
-.russianRoulette.light-mode {
+.russianRoulette.light-mode, .russianRoulettePage .light-mode.gameModal, .russianRoulettePage .nonModal .light-mode.gameContents, .nonModal .russianRoulettePage .light-mode.gameContents, .nonModal .light-mode.russianRouletteContents {
   background-image: linear-gradient(135deg, #f5d368 0%, #ff7c2d 100%);
   box-shadow: 0 25px 40px -15px #faa347; }
-  .russianRoulette.light-mode .gameIcon {
-    position: fixed; }
-.light-mode .russianRoulette {
+  .russianRoulette.light-mode .gameIcon, .russianRoulettePage .light-mode.gameModal .gameIcon, .russianRoulettePage .nonModal .light-mode.gameContents .gameIcon, .nonModal .russianRoulettePage .light-mode.gameContents .gameIcon, .nonModal .light-mode.russianRouletteContents .gameIcon {
+    position: absolute; }
+.light-mode .russianRoulette, .light-mode .russianRoulettePage .gameModal, .russianRoulettePage .light-mode .gameModal, .light-mode .russianRoulettePage .nonModal .gameContents, .russianRoulettePage .nonModal .light-mode .gameContents, .light-mode .nonModal .russianRoulettePage .gameContents, .nonModal .russianRoulettePage .light-mode .gameContents, .light-mode .nonModal .russianRouletteContents, .nonModal .light-mode .russianRouletteContents {
   background-image: linear-gradient(135deg, #f5d368 0%, #ff7c2d 100%);
   box-shadow: 0 25px 40px -15px #faa347; }
-  .light-mode .russianRoulette .gameIcon {
-    position: fixed; }
-.russianRoulette.dark-mode {
+  .light-mode .russianRoulette .gameIcon, .light-mode .russianRoulettePage .gameModal .gameIcon, .russianRoulettePage .light-mode .gameModal .gameIcon, .light-mode .russianRoulettePage .nonModal .gameContents .gameIcon, .russianRoulettePage .nonModal .light-mode .gameContents .gameIcon, .light-mode .nonModal .russianRoulettePage .gameContents .gameIcon, .nonModal .russianRoulettePage .light-mode .gameContents .gameIcon, .light-mode .nonModal .russianRouletteContents .gameIcon, .nonModal .light-mode .russianRouletteContents .gameIcon {
+    position: absolute; }
+.russianRoulette.dark-mode, .russianRoulettePage .dark-mode.gameModal, .russianRoulettePage .nonModal .dark-mode.gameContents, .nonModal .russianRoulettePage .dark-mode.gameContents, .nonModal .dark-mode.russianRouletteContents {
   background-image: linear-gradient(135deg, #433831 0%, #ad6700 100%);
   box-shadow: 0 25px 40px -15px #8a5710; }
-  .russianRoulette.dark-mode .gameIcon {
-    position: fixed; }
-.dark-mode .russianRoulette {
+  .russianRoulette.dark-mode .gameIcon, .russianRoulettePage .dark-mode.gameModal .gameIcon, .russianRoulettePage .nonModal .dark-mode.gameContents .gameIcon, .nonModal .russianRoulettePage .dark-mode.gameContents .gameIcon, .nonModal .dark-mode.russianRouletteContents .gameIcon {
+    position: absolute; }
+.dark-mode .russianRoulette, .dark-mode .russianRoulettePage .gameModal, .russianRoulettePage .dark-mode .gameModal, .dark-mode .russianRoulettePage .nonModal .gameContents, .russianRoulettePage .nonModal .dark-mode .gameContents, .dark-mode .nonModal .russianRoulettePage .gameContents, .nonModal .russianRoulettePage .dark-mode .gameContents, .dark-mode .nonModal .russianRouletteContents, .nonModal .dark-mode .russianRouletteContents {
   background-image: linear-gradient(135deg, #433831 0%, #ad6700 100%);
   box-shadow: 0 25px 40px -15px #8a5710; }
-  .dark-mode .russianRoulette .gameIcon {
-    position: fixed; }
+  .dark-mode .russianRoulette .gameIcon, .dark-mode .russianRoulettePage .gameModal .gameIcon, .russianRoulettePage .dark-mode .gameModal .gameIcon, .dark-mode .russianRoulettePage .nonModal .gameContents .gameIcon, .russianRoulettePage .nonModal .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .russianRoulettePage .gameContents .gameIcon, .nonModal .russianRoulettePage .dark-mode .gameContents .gameIcon, .dark-mode .nonModal .russianRouletteContents .gameIcon, .nonModal .dark-mode .russianRouletteContents .gameIcon {
+    position: absolute; }
+
+.gameModal .rollDiceContents .closeButton.light-mode, .nonModal .gameContents .rollDiceContents .closeButton.light-mode {
+  color: #4acae4;
+  background-color: #ffffff; }
+.light-mode .gameModal .rollDiceContents .closeButton, .light-mode .nonModal .gameContents .rollDiceContents .closeButton, .nonModal .light-mode .gameContents .rollDiceContents .closeButton {
+  color: #4acae4;
+  background-color: #ffffff; }
+.gameModal .rollDiceContents .closeButton.dark-mode, .nonModal .gameContents .rollDiceContents .closeButton.dark-mode {
+  color: #ffffff;
+  background-color: #014263; }
+.dark-mode .gameModal .rollDiceContents .closeButton, .dark-mode .nonModal .gameContents .rollDiceContents .closeButton, .nonModal .dark-mode .gameContents .rollDiceContents .closeButton {
+  color: #ffffff;
+  background-color: #014263; }
+
+.rollDiceContents .gameName {
+  line-height: 50px; }
+
+.coinFlipContents .gameName {
+  line-height: 50px; }
+
+.drawCardContents .gameName {
+  line-height: 50px; }
+
+.bracketsContents .gameName {
+  line-height: 50px; }
+
+.teamMakerContents .gameName {
+  line-height: 50px; }
+
+.rouletteContents .gameName {
+  line-height: 50px; }
+
+.russianRouletteContents .gameName {
+  line-height: 50px; }
 
 /*# sourceMappingURL=index.css.map */

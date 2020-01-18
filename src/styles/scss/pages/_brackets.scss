@@ -1,0 +1,29 @@
+.bracketsPage {
+    .gameModal {
+        @extend .brackets;
+    }
+}
+
+.nonModal {
+    .bracketsContents {
+        @extend .brackets;
+    }
+}
+
+.gameModal {
+    .bracketsContents {
+        .closeButton {
+            @include themed {
+                color: t(bracketsCloseColor);
+                background-color: t(bracketsCloseBackground);
+            }
+        }
+    }
+}
+
+.bracketsContents {
+    .gameName {
+        @extend %gameName;
+        line-height: 50px;
+    }
+}

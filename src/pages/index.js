@@ -8,9 +8,9 @@ import Games from '../components/Games/games';
 import '../styles/css/index.css';
 
 const seo = {
-    title: 'Mountain  Central',
+    title: 'Game Night',
     description: 'That is a Gatsby Site hosted on Netlify',
-    class: 'homepage', // adds page specific styling
+    className: 'homepage', // adds page specific styling
 };
 
 const IndexPage = ({ pageContext: { lang }, location: { pathname } }) => (

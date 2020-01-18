@@ -61,7 +61,7 @@ const Head = ({ seo = {}, path }) => (
             }
             return (
                 <Helmet titleTemplate={`%s | ${site.title}`} defaultTitle={site.title}>
-                    <html lang={T.translate('key')} className={seo.class} />
+                    <html lang={T.translate('key')} className={seo.className} />
                     <link
                         rel="apple-touch-icon"
                         href="/icons/apple-touch-icon.png"

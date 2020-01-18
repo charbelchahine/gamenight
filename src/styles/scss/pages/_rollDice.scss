@@ -1,0 +1,29 @@
+.rollDicePage {
+    .gameModal {
+        @extend .rollDice;
+    }
+}
+
+.nonModal {
+    .rollDiceContents {
+        @extend .rollDice;
+    }
+}
+
+.gameModal {
+    .rollDiceContents {
+        .closeButton {
+            @include themed {
+                color: t(rollDiceCloseColor);
+                background-color: t(rollDiceCloseBackground);
+            }
+        }
+    }
+}
+
+.rollDiceContents {
+    .gameName {
+        @extend %gameName;
+        line-height: 50px;
+    }
+}

@@ -4,6 +4,7 @@ import T from 'i18n-react';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout/layout';
 import Link from '../components/Link/link';
+import '../styles/css/index.css';
 
 const NotFoundPage = ({ pageContext: { lang }, location: { pathname } }) => (
     <Layout path={pathname}>
