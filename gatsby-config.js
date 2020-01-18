@@ -55,6 +55,16 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-plugin-modal-routing`,
+            options: {
+                appElement: '#___gatsby',
+                modalProps: {
+                    overlayClassName: 'gameModal',
+                    className: 'gameModalContent',
+                },
+            },
+        },
+        {
             resolve: 'gatsby-plugin-react-svg',
             options: {
                 rule: {
