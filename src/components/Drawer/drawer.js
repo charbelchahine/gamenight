@@ -1,9 +1,10 @@
 import React from 'react';
-import { IconButton, SwipeableDrawer } from '@material-ui/core';
+import { IconButton, SwipeableDrawer, Tooltip } from '@material-ui/core';
 import T from 'i18n-react';
 import Link from '../Link/link';
+import NavLinks from '../../utils/navLinks';
 
-import Menu from '../../assets/svg/menu.svg';
+import Menu from '../../assets/svg/navIcons/menu.svg';
 
 const Drawer = () => {
     const [openDrawer, setDrawerOpen] = React.useState(false);
@@ -23,22 +24,31 @@ const Drawer = () => {
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
-            <Link to="/">{T.translate('home.title')}</Link>
-            <Link to="/about">{T.translate('about.title')}</Link>
-            <Link to="/contact">{T.translate('contact.title')}</Link>
+            {NavLinks.map(item => (
+                <Link to={item.path} key={item.id} className="navLink">
+                    {item.icon}
+                    <span>{T.translate(`${item.id}.title`)}</span>
+                </Link>
+            ))}
         </div>
     );
 
     return (
         <>
-            <IconButton
-                aria-label="menu"
-                classes={{ root: 'navIconButton' }}
-                color="inherit"
-                onClick={toggleDrawer(true)}
+            <Tooltip
+                title="Menu"
+                aria-label="Menu"
+                classes={{ popper: 'navPopper', tooltip: 'navTooltip' }}
             >
-                <Menu />
-            </IconButton>
+                <IconButton
+                    aria-label="menu"
+                    classes={{ root: 'navIconButton' }}
+                    color="inherit"
+                    onClick={toggleDrawer(true)}
+                >
+                    <Menu />
+                </IconButton>
+            </Tooltip>
             <SwipeableDrawer
                 open={openDrawer}
                 classes={{ paper: 'drawer' }}

@@ -5,12 +5,12 @@ import Helmet from 'react-helmet';
 import Layout from '../components/Layout/layout';
 import '../styles/css/index.css';
 
-const ContactPage = ({ pageContext: { lang }, location: { pathname } }) => (
+const FeedbackPage = ({ pageContext: { lang }, location: { pathname } }) => (
     <Layout path={pathname}>
         {T.setTexts(lang)}
-        <Helmet title={T.translate('contact.title')} />
-        <section id="contactForm" className="content">
-            <div className="contactGrid">
+        <Helmet title={T.translate('feedback.title')} />
+        <section id="feedbackForm" className="content">
+            <div className="feedbackGrid">
                 <span>hello</span>
                 <span>hello</span>
                 <span>hello</span>
@@ -20,7 +20,7 @@ const ContactPage = ({ pageContext: { lang }, location: { pathname } }) => (
     </Layout>
 );
 
-ContactPage.propTypes = {
+FeedbackPage.propTypes = {
     pageContext: PropTypes.shape({
         lang: PropTypes.shape({}),
     }),
@@ -29,9 +29,9 @@ ContactPage.propTypes = {
     }),
 };
 
-ContactPage.defaultProps = {
+FeedbackPage.defaultProps = {
     pageContext: {},
     location: {},
 };
 
-export default ContactPage;
+export default FeedbackPage;

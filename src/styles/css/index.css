@@ -323,7 +323,6 @@ html {
 
 body {
   overflow-x: hidden;
-  position: relative;
   max-width: 930px;
   margin: 0 auto;
   padding: 0 20px; }
@@ -434,6 +433,19 @@ nav {
   .dark-mode nav .navIconButton:hover {
     background-color: rgba(255, 255, 255, 0.2); }
 
+.navPopper .navTooltip.light-mode {
+  color: #f8f8f8;
+  background-color: #240c6d; }
+.light-mode .navPopper .navTooltip {
+  color: #f8f8f8;
+  background-color: #240c6d; }
+.navPopper .navTooltip.dark-mode {
+  color: #1a1a33;
+  background-color: #ffffff; }
+.dark-mode .navPopper .navTooltip {
+  color: #1a1a33;
+  background-color: #ffffff; }
+
 .gamePage header .headerLogo {
   display: none; }
 @media (min-width: 600px) {
@@ -460,10 +472,18 @@ nav {
     background-color: #1a1a33; }
   .drawer .drawerContents {
     display: flex;
+    padding: 50px;
     flex-direction: column; }
-    .drawer .drawerContents a {
+    .drawer .drawerContents .navLink {
+      display: flex;
       color: inherit;
-      text-decoration: none; }
+      font-size: 27px;
+      line-height: 30px;
+      margin-bottom: 50px;
+      text-decoration: none;
+      font-family: NeutraText-bold, Arial, Helvetica, sans-serif; }
+      .drawer .drawerContents .navLink svg {
+        margin-right: 20px; }
 
 .langSelectorOptions .langSelectorItem:hover,
 .langSelectorOptions .langSelectorItem:focus {
