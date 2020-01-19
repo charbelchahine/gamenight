@@ -6,10 +6,19 @@
     }
     .drawerContents {
         display: flex;
+        padding: 50px;
         flex-direction: column;
-        a {
+        .navLink {
+            display: flex;
             color: inherit;
+            font-size: 27px;
+            line-height: 30px;
+            margin-bottom: 50px;
             text-decoration: none;
+            font-family: $neutraFont;
+            svg {
+                margin-right: 20px;
+            }
         }
     }
 }

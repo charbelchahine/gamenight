@@ -50,6 +50,15 @@ nav {
     }
 }
 
+.navPopper {
+    .navTooltip {
+        @include themed {
+            color: t(backgroundColor);
+            background-color: t(linkColor);
+        }
+    }
+}
+
 .gamePage {
     header {
         .headerLogo {

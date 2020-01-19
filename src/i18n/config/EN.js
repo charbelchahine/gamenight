@@ -1,7 +1,7 @@
 const home = require('../EN/home');
 const about = require('../EN/about');
 const e404 = require('../EN/e404');
-const contact = require('../EN/contact');
+const feedback = require('../EN/feedback');
 const rollDice = require('../EN/rollDice');
 const coinFlip = require('../EN/coinFlip');
 const drawCard = require('../EN/drawCard');
@@ -17,7 +17,7 @@ module.exports = {
     home,
     about,
     e404,
-    contact,
+    feedback,
     rollDice,
     coinFlip,
     drawCard,

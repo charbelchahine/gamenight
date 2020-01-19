@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import T from 'i18n-react';
 import { navigate } from 'gatsby';
-import { Menu, MenuItem, IconButton } from '@material-ui/core/';
-import LanguageIcon from '@material-ui/icons/Language';
+import { Menu, MenuItem, IconButton, Tooltip } from '@material-ui/core/';
 import i18n from '../../i18n/config/i18n';
+
+import Globe from '../../assets/svg/navIcons/globe.svg';
 
 class Lang extends Component {
     constructor(props) {
@@ -39,16 +40,22 @@ class Lang extends Component {
         const { anchorEl } = this.state;
         return (
             <>
-                <IconButton
-                    aria-haspopup="true"
-                    aria-label="Language Selector"
-                    aria-controls="lang-selector"
-                    classes={{ root: 'navIconButton' }}
-                    color="inherit"
-                    onClick={this.handleOpenMenu}
+                <Tooltip
+                    title="Language"
+                    aria-label="Language"
+                    classes={{ popper: 'navPopper', tooltip: 'navTooltip' }}
                 >
-                    <LanguageIcon />
-                </IconButton>
+                    <IconButton
+                        aria-haspopup="true"
+                        aria-label="Language Selector"
+                        aria-controls="lang-selector"
+                        classes={{ root: 'navIconButton' }}
+                        color="inherit"
+                        onClick={this.handleOpenMenu}
+                    >
+                        <Globe />
+                    </IconButton>
+                </Tooltip>
                 <Menu
                     keepMounted
                     id="lang-selector"
