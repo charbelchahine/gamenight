@@ -1,15 +1,15 @@
 module.exports = {
     siteMetadata: {
-        title: 'Mountain Central',
-        description: 'Auriane Douida Portfolio Website',
-        type: 'Person',
-        name: 'Mountain Central',
-        url: 'https://mountaincentral.netlify.com/',
+        title: 'Game Night',
+        description: 'Hosting a game night?',
+        type: 'Website',
+        name: 'Game Night',
+        url: 'https://game-night.netlify.com/',
         sameAs: ['http://www.facebook.com/your-profile', 'http://www.twitter.com/yourProfile'],
         facebookAppID: '',
         twitterSiteID: '',
         twitterUserID: '',
-        siteUrl: 'https://mountaincentral.netlify.com/',
+        siteUrl: 'https://game-night.netlify.com/',
     },
     plugins: [
         {
@@ -26,11 +26,11 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'Mountain Central',
-                short_name: 'Mtn Central', // must be less than 12 characters
+                name: 'Game Night',
+                short_name: 'Game Night', // must be less than 12 characters
                 start_url: '/',
-                background_color: '#0E283F',
-                theme_color: '#582644',
+                background_color: '#1a1a33',
+                theme_color: '#f8f8f8',
                 display: 'minimal-ui',
                 icon: 'static/icons/icon.png',
             },
@@ -39,7 +39,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-nprogress',
             options: {
-                color: '#575757',
+                color: '#1a1a33',
                 showSpinner: false,
             },
         },
