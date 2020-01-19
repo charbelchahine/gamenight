@@ -49,3 +49,24 @@ nav {
         }
     }
 }
+
+.gamePage {
+    header {
+        .headerLogo {
+            display: none;
+        }
+        .navLogo {
+            @include md {
+                visibility: visible;
+            }
+        }
+    }
+    .openModal {
+        .headerLogo {
+            display: flex;
+        }
+        .navLogo {
+            visibility: hidden;
+        }
+    }
+}

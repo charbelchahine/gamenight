@@ -1,0 +1,29 @@
+.teamMakerPage {
+    .gameModal {
+        @extend .teamMaker;
+    }
+}
+
+.nonModal {
+    .teamMakerContents {
+        @extend .teamMaker;
+    }
+}
+
+.gameModal {
+    .teamMakerContents {
+        .closeButton {
+            @include themed {
+                color: t(teamMakerCloseColor);
+                background-color: t(teamMakerCloseBackground);
+            }
+        }
+    }
+}
+
+.teamMakerContents {
+    .gameName {
+        @extend %gameName;
+        line-height: 50px;
+    }
+}

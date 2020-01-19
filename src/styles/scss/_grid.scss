@@ -15,3 +15,54 @@ body {
         background-color: t(backgroundColor);
     }
 }
+
+.gameModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+$gameModalPadding: 30px;
+
+.gameModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    outline: none;
+    min-height: 200px;
+    background: #ffffff;
+    padding: $gameModalPadding;
+    // WebkitOverflowScrolling: 'touch',
+    @include md {
+        left: 50%;
+        top: 150px;
+        border-radius: 8px;
+        transform: translateX(-50%);
+        width: 600px - 2 * $gameModalPadding;
+        max-width: 600px - 2 * $gameModalPadding;
+    }
+    .closeButton {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: $gameModalPadding;
+        right: $gameModalPadding;
+        box-shadow: 0 2px 16px 0 #e0e2e4;
+    }
+}
+
+.nonModal {
+    .gameContents {
+        @extend .gameModal;
+        position: unset;
+        margin: 0 auto;
+        transform: none;
+        width: unset;
+        border-radius: 8px;
+    }
+}

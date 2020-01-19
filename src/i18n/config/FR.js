@@ -2,13 +2,27 @@ const home = require('../FR/home');
 const about = require('../FR/about');
 const e404 = require('../FR/e404');
 const contact = require('../FR/contact');
+const rollDice = require('../FR/rollDice');
+const coinFlip = require('../FR/coinFlip');
+const drawCard = require('../FR/drawCard');
+const brackets = require('../FR/brackets');
+const teamMaker = require('../FR/teamMaker');
+const roulette = require('../FR/roulette');
+const russianRoulette = require('../FR/russianRoulette');
 
 module.exports = {
     key: 'fr',
     path: '/fr',
-    name: 'Fr',
+    name: 'FR',
     home,
     about,
     e404,
     contact,
+    rollDice,
+    coinFlip,
+    drawCard,
+    brackets,
+    teamMaker,
+    roulette,
+    russianRoulette,
 };

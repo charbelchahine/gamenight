@@ -1,0 +1,29 @@
+.russianRoulettePage {
+    .gameModal {
+        @extend .russianRoulette;
+    }
+}
+
+.nonModal {
+    .russianRouletteContents {
+        @extend .russianRoulette;
+    }
+}
+
+.gameModal {
+    .russianRouletteContents {
+        .closeButton {
+            @include themed {
+                color: t(russianRouletteCloseColor);
+                background-color: t(russianRouletteCloseBackground);
+            }
+        }
+    }
+}
+
+.russianRouletteContents {
+    .gameName {
+        @extend %gameName;
+        line-height: 50px;
+    }
+}

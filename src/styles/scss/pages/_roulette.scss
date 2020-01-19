@@ -1,0 +1,29 @@
+.roulettePage {
+    .gameModal {
+        @extend .roulette;
+    }
+}
+
+.nonModal {
+    .rouletteContents {
+        @extend .roulette;
+    }
+}
+
+.gameModal {
+    .rouletteContents {
+        .closeButton {
+            @include themed {
+                color: t(rouletteCloseColor);
+                background-color: t(rouletteCloseBackground);
+            }
+        }
+    }
+}
+
+.rouletteContents {
+    .gameName {
+        @extend %gameName;
+        line-height: 50px;
+    }
+}

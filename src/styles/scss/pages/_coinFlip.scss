@@ -1,0 +1,29 @@
+.coinFlipPage {
+    .gameModal {
+        @extend .coinFlip;
+    }
+}
+
+.nonModal {
+    .coinFlipContents {
+        @extend .coinFlip;
+    }
+}
+
+.gameModal {
+    .coinFlipContents {
+        .closeButton {
+            @include themed {
+                color: t(coinFlipCloseColor);
+                background-color: t(coinFlipCloseBackground);
+            }
+        }
+    }
+}
+
+.coinFlipContents {
+    .gameName {
+        @extend %gameName;
+        line-height: 50px;
+    }
+}

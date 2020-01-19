@@ -1,0 +1,29 @@
+.drawCardPage {
+    .gameModal {
+        @extend .drawCard;
+    }
+}
+
+.nonModal {
+    .drawCardContents {
+        @extend .drawCard;
+    }
+}
+
+.gameModal {
+    .drawCardContents {
+        .closeButton {
+            @include themed {
+                color: t(drawCardCloseColor);
+                background-color: t(drawCardCloseBackground);
+            }
+        }
+    }
+}
+
+.drawCardContents {
+    .gameName {
+        @extend %gameName;
+        line-height: 50px;
+    }
+}
