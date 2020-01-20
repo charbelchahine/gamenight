@@ -13,7 +13,6 @@ const Games = () => {
                 return (
                     <Link to={game.path} openInModal className="gameLink" key={game.id}>
                         <motion.div
-                            whileTap={{ scale: 0.9 }}
                             whileHover={{ scale: 1.1 }}
                             className={`gamePreview ${game.id}`}
                         >
