@@ -43,6 +43,8 @@ $gamePreviewPadding: 25px;
         box-shadow: t(rollDiceShadow);
         .gameIcon {
             position: absolute;
+            bottom: t(rollDiceBottom);
+            right: t(rollDiceRight);
         }
     }
 }
@@ -53,6 +55,8 @@ $gamePreviewPadding: 25px;
         box-shadow: t(coinFlipShadow);
         .gameIcon {
             position: absolute;
+            bottom: t(coinFlipBottom);
+            right: t(coinFlipRight);
         }
     }
 }
@@ -63,6 +67,8 @@ $gamePreviewPadding: 25px;
         box-shadow: t(drawCardShadow);
         .gameIcon {
             position: absolute;
+            bottom: t(drawCardBottom);
+            right: t(drawCardRight);
         }
     }
 }
@@ -73,6 +79,8 @@ $gamePreviewPadding: 25px;
         box-shadow: t(bracketsShadow);
         .gameIcon {
             position: absolute;
+            bottom: t(bracketsBottom);
+            right: t(bracketsRight);
         }
     }
 }
@@ -83,6 +91,8 @@ $gamePreviewPadding: 25px;
         box-shadow: t(teamMakerShadow);
         .gameIcon {
             position: absolute;
+            bottom: t(teamMakerBottom);
+            right: t(teamMakerRight);
         }
     }
 }
@@ -93,6 +103,8 @@ $gamePreviewPadding: 25px;
         box-shadow: t(rouletteShadow);
         .gameIcon {
             position: absolute;
+            bottom: t(rouletteBottom);
+            right: t(rouletteRight);
         }
     }
 }
@@ -103,6 +115,8 @@ $gamePreviewPadding: 25px;
         box-shadow: t(russianRouletteShadow);
         .gameIcon {
             position: absolute;
+            bottom: t(russianRouletteBottom);
+            right: t(russianRouletteRight);
         }
     }
 }

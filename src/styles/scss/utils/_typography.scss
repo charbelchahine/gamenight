@@ -18,6 +18,7 @@ $black: 900;
     }
     @font-face {
         font-family: unquote($name) + $space-weight;
+        font-display: swap;
         src: url('/../../fonts/'+$name+$dash-weight+'.woff2') format('woff2'),
             url('/../../fonts/'+$name+$dash-weight+'.woff') format('woff'),
             url('/../../fonts/'+$name+$dash-weight+'.ttf') format('truetype');
@@ -34,7 +35,7 @@ $black: 900;
 // Include your fonts here
 @include font('neutratext');
 
-$neutraFont: NeutraText-bold, Arial, Helvetica, sans-serif;
+$neutraFont: NeutraText bold, Arial, Helvetica, sans-serif;
 
 %gameName {
     font-size: 27px;
