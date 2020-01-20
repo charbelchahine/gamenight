@@ -1,98 +1,35 @@
-# Multilingual Gatsby NetlifyCMS Starter
+# Game Night (WIP)
+
+![Cover](https://user-images.githubusercontent.com/14867027/72715732-028d1400-3b3f-11ea-85b8-cff517c50337.png)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ada97e40-29d6-4947-8885-2814ad3f0008/deploy-status)](https://app.netlify.com/sites/game-night/deploys)
 
-This is a gatsby starter, it supports multiple languages, NetlifyCMS, styling in Sass, and material ui components. A hosted demo is found at https://mountaincentral.netlify.com
+Game Night is your one-stop shop for hosting an impromptu game night with friends, family, coworkers, you name it! No more missing dices or stumbling to make a tournament brackets. Game Night aims to assist you with your festivities and ensure your game night is one for the books. https://game-night.netlify.com/
+
+**Note that this is a work in progress and some features are coming soon**
+
+View the concept on [Behance](https://www.behance.net/gallery/90954891/Game-Night)!
 
 ## Table of Contents
 
 -   [Built With](#built-with)
--   [Getting Started](#getting-started)
-    -   [Prerequisites](#prerequisites)
-    -   [Clone the repo](#clone-the-repo)
-    -   [Development](#development)
-    -   [Sass](#sass)
-    -   [Set up NetlifyCMS](#set-up-netlifycms)
-    -   [Configuring NetlifyCMS](#configuring-netlifycms)
 -   [Lighthouse Audit](#lighthouse-audit)
 -   [Author](#author)
 
 ## Built With
 
 -   [GatsbyJS](https://www.gatsbyjs.org) - to obtain static/offline Progressive Web App
--   [NetlifyCMS](https://www.netlifycms.org) - to obtain blog posts from markdown files.
 -   [react-i18next](https://react.i18next.com/) - Internationalization to obtain multilingual site
+-   [Framer Motion](https://www.framer.com/motion/) - for animating components
 -   [Sass](https://sass-lang.com) - for styling
--   [react-md](https://react-md.mlaursen.com/) - Material UI components customizable in Sass instead of inline styles
-
-## Getting Started
-
-These instructions will get you a copy of this gastby starter up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-Make sure to have [Node](https://nodejs.org/) & [Yarn](https://yarnpkg.com/) installed on your local machine
-
-Open a terminal window and install React & Gatsby's command line tool
-
-```
-yarn add react react-dom gatsby-cli
-```
-
-### Clone the repo
-
-Clone the repo in the directory of your choice and then move to this new directory
-
-```
-git clone https://github.com/charbelchahine/multilingual-gatsby-netlifycms.git
-cd multilingual-gatsby-netlifycms
-```
-
-Install all dependencies for the prototype
-
-```
-yarn install
-```
-
-### Development
-
-Start a hot-reloading development environment
-
-```
-gatsby develop
-```
-
-You will now be able to view the prototype at http://localhost:8000/. Any change you make to your React components will immediately be visible in the browser.
-
-### Sass
-
-Run `yarn sasss` before making changes to any of the `.scss` files.
-
-### Set up NetlifyCMS
-
-The following steps-by-steps use [Netlify](https://www.netlify.com) to host the starter from GitHub. Other methods can be used to implement [NetlifyCMS](https://www.netlifycms.org).
-
-1. Sign in or make a [Netlify](https://www.netlify.com) account
-1. Make a **New site From Git** and select GitHub
-1. Select the appropriate repo
-1. Go to the Identity tab and **Enable Identity**
-1. Click on **Settings and usage**
-1. Under **Registration** check **Invite only**
-1. Under **External providers**, add GitHub, Google etc
-1. Under **Services** enable git gateway
-1. Go back to the Identiy tab and invite users/yourself
-1. Go to your netlify hosted website `/admin/` and login using your credentials to access the CMS
-
-### Configuring NetlifyCMS
-
-In `/static/admin/confiq.yml`, the CMS can be configured. Right now, blog posts are configured to have the same path in english & french; hence the titles are also the same since they are configured to create the path in `gatsby-node.js`.
+-   [Material-UI](https://material-ui.com) - React Material UI components with customizable styling
 
 ## Lighthouse Audit
 
 | Audits              | Score |
 | ------------------- | ----: |
-| Performance         |   96% |
-| Progressive Web App |   96% |
+| Performance         |  100% |
+| Progressive Web App |  100% |
 | Accessibility       |  100% |
 | Best Practices      |  100% |
 | SEO                 |  100% |
