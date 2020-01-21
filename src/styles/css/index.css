@@ -730,6 +730,27 @@ nav {
     bottom: 7px;
     right: 13px; }
 
+.comingSoonContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .comingSoonContainer.light-mode {
+    color: #240c6d; }
+  .light-mode .comingSoonContainer {
+    color: #240c6d; }
+  .comingSoonContainer.dark-mode {
+    color: #ffffff; }
+  .dark-mode .comingSoonContainer {
+    color: #ffffff; }
+  .comingSoonContainer .comingSoonIcon {
+    margin-bottom: 40px; }
+  .comingSoonContainer .comingSoon {
+    font-size: 27px;
+    font-family: NeutraText bold, Arial, Helvetica, sans-serif; }
+
+.gamePage .comingSoonContainer {
+  color: #ffffff; }
+
 .gameModal .rollDiceContents .closeButton.light-mode, .nonModal .gameContents .rollDiceContents .closeButton.light-mode {
   color: #4acae4;
   background-color: #ffffff; }

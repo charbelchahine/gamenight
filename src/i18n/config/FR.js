@@ -9,6 +9,7 @@ const brackets = require('../FR/brackets');
 const teamMaker = require('../FR/teamMaker');
 const roulette = require('../FR/roulette');
 const russianRoulette = require('../FR/russianRoulette');
+const comingSoon = require('../FR/comingSoon');
 
 module.exports = {
     key: 'fr',
@@ -25,4 +26,5 @@ module.exports = {
     teamMaker,
     roulette,
     russianRoulette,
+    comingSoon,
 };
