@@ -1,0 +1,21 @@
+.comingSoonContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include themed {
+        color: t(linkColor);
+    }
+    .comingSoonIcon {
+        margin-bottom: 40px;
+    }
+    .comingSoon {
+        font-size: 27px;
+        font-family: $neutraFont;
+    }
+}
+
+.gamePage {
+    .comingSoonContainer {
+        color: #ffffff;
+    }
+}
