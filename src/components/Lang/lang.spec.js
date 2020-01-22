@@ -19,18 +19,14 @@ describe('Layout', () => {
         expect(wrapper.state().path).toBe(path);
     });
 
-    it('should render a Language Icon', () => {
-        expect(wrapper.find('LanguageIcon').exists()).toBe(true);
-    });
-
     it('should have EN & FR options', () => {
-        expect(wrapper.find('[children="En"]').exists()).toBe(true);
-        expect(wrapper.find('[children="Fr"]').exists()).toBe(true);
+        expect(wrapper.find('[children="EN"]').exists()).toBe(true);
+        expect(wrapper.find('[children="FR"]').exists()).toBe(true);
     });
 
     it('should pass EN & FR  paths to their options', () => {
-        expect(wrapper.find('[children="En"]').prop('data-value')).toBe('');
-        expect(wrapper.find('[children="Fr"]').prop('data-value')).toBe('/fr');
+        expect(wrapper.find('[children="EN"]').prop('data-value')).toBe('');
+        expect(wrapper.find('[children="FR"]').prop('data-value')).toBe('/fr');
     });
 
     describe('the menu component', () => {
@@ -45,7 +41,7 @@ describe('Layout', () => {
             const mockedEvent = { target: { dataset: { value: '' } } };
             wrapper.setState({ anchorEl: 'LangMenu' });
             expect(wrapper.state().anchorEl).toBe('LangMenu');
-            wrapper.find('[children="En"]').simulate('click', mockedEvent);
+            wrapper.find('[children="EN"]').simulate('click', mockedEvent);
             expect(wrapper.state().anchorEl).toBe(null);
         });
     });
