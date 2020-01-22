@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IconButton, SwipeableDrawer, Tooltip } from '@material-ui/core';
 import T from 'i18n-react';
 import Link from '../Link/link';
@@ -7,7 +7,7 @@ import NavLinks from '../../utils/navLinks';
 import Menu from '../../assets/svg/navIcons/menu.svg';
 
 const Drawer = () => {
-    const [openDrawer, setDrawerOpen] = React.useState(false);
+    const [openDrawer, setDrawerOpen] = useState(false);
     const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     const toggleDrawer = open => event => {
@@ -45,6 +45,7 @@ const Drawer = () => {
                     classes={{ root: 'navIconButton' }}
                     color="inherit"
                     onClick={toggleDrawer(true)}
+                    data-test="drawer-button"
                 >
                     <Menu />
                 </IconButton>
@@ -56,6 +57,7 @@ const Drawer = () => {
                 onOpen={toggleDrawer(true)}
                 onClose={toggleDrawer(false)}
                 disableBackdropTransition={!iOS}
+                data-test="drawer-sidebar"
             >
                 {mobileNavContents}
             </SwipeableDrawer>

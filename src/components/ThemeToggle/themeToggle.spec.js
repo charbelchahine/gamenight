@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import ThemeToggle from './themeToggle';
 
-describe('Layout', () => {
+describe('Theme Toggle', () => {
     let wrapper;
 
     beforeEach(() => {

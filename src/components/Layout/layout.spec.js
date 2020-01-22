@@ -16,34 +16,27 @@ describe('Layout', () => {
         expect(wrapper.exists()).toBe(true);
     });
 
-    it('should have a Head and NavLinks & Lang selector & ThemeToggle inside the Header', () => {
+    it('should have contain Head & Header by default', () => {
         expect(wrapper.find('Head').exists()).toBe(true);
-        expect(
-            wrapper
-                .find('Header')
-                .find('NavLinks')
-                .exists(),
-        ).toBe(true);
-        expect(
-            wrapper
-                .find('Header')
-                .find('Lang')
-                .exists(),
-        ).toBe(true);
-        expect(
-            wrapper
-                .find('Header')
-                .find('ThemeToggle')
-                .exists(),
-        ).toBe(true);
+        expect(wrapper.find('Header').exists()).toBe(true);
     });
 
-    it('should pass `path` to Head & Lang selector', () => {
+    it('should not contain the Header if opened via modal', () => {
+        wrapper.setProps({ isModal: true });
+        expect(wrapper.find('Header').exists()).toBe(false);
+    });
+
+    it('should pass `path` to Head & Header', () => {
         expect(wrapper.find('Head').prop('path')).toBe(path);
-        expect(wrapper.find('Lang').prop('path')).toBe(path);
+        expect(wrapper.find('Header').prop('path')).toBe(path);
     });
 
-    it('should pass `children`', () => {
-        expect(wrapper.find('#headerChildrenTest').exists()).toBe(true);
+    it('should pass `children` in its main', () => {
+        expect(
+            wrapper
+                .find('main')
+                .find('#headerChildrenTest')
+                .exists(),
+        ).toBe(true);
     });
 });

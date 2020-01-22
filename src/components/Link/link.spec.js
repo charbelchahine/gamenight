@@ -22,4 +22,13 @@ describe('Link', () => {
     it('should pass the right path to `to`', () => {
         expect(wrapper.prop('to')).toBe(`${spy()}${path}`);
     });
+
+    it('should have its modal attribute set to false by default', () => {
+        expect(wrapper.prop('state')).toEqual({ modal: false });
+    });
+
+    it('should set the modal attribute to true if openInModal is true', () => {
+        wrapper.setProps({ openInModal: true });
+        expect(wrapper.prop('state')).toEqual({ modal: true });
+    });
 });

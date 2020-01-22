@@ -62,7 +62,7 @@
         "build": "gatsby build",
         "serve": "gatsby serve",
         "test": "jest --coverage",
-        "jest:w": "jest --watch --coverage",
+        "jest:w": "jest --watch",
         "sass": "sass --watch src/styles/scss/index.scss:src/styles/css/index.css"
     },
     "homepage": "https://game-night.netlify.com/",
