@@ -19,6 +19,26 @@
   font-family: neutratext thin;
   font-display: swap;
   src: url("/../../fonts/neutratext-thin.woff2") format("woff2"), url("/../../fonts/neutratext-thin.woff") format("woff"), url("/../../fonts/neutratext-thin.ttf") format("truetype"); }
+@font-face {
+  font-family: gillsans;
+  font-display: swap;
+  src: url("/../../fonts/gillsans.woff2") format("woff2"), url("/../../fonts/gillsans.woff") format("woff"), url("/../../fonts/gillsans.ttf") format("truetype"); }
+@font-face {
+  font-family: gillsans black;
+  font-display: swap;
+  src: url("/../../fonts/gillsans-black.woff2") format("woff2"), url("/../../fonts/gillsans-black.woff") format("woff"), url("/../../fonts/gillsans-black.ttf") format("truetype"); }
+@font-face {
+  font-family: gillsans bold;
+  font-display: swap;
+  src: url("/../../fonts/gillsans-bold.woff2") format("woff2"), url("/../../fonts/gillsans-bold.woff") format("woff"), url("/../../fonts/gillsans-bold.ttf") format("truetype"); }
+@font-face {
+  font-family: gillsans light;
+  font-display: swap;
+  src: url("/../../fonts/gillsans-light.woff2") format("woff2"), url("/../../fonts/gillsans-light.woff") format("woff"), url("/../../fonts/gillsans-light.ttf") format("truetype"); }
+@font-face {
+  font-family: gillsans thin;
+  font-display: swap;
+  src: url("/../../fonts/gillsans-thin.woff2") format("woff2"), url("/../../fonts/gillsans-thin.woff") format("woff"), url("/../../fonts/gillsans-thin.ttf") format("truetype"); }
 .gamePreview .gameName, .rollDiceContents .gameName, .coinFlipContents .gameName, .drawCardContents .gameName, .bracketsContents .gameName, .teamMakerContents .gameName, .rouletteContents .gameName, .russianRouletteContents .gameName {
   font-size: 27px;
   color: #ffffff;
@@ -862,5 +882,101 @@ nav {
 
 .russianRouletteContents .gameName {
   line-height: 50px; }
+
+.aboutGameNight, .aboutDeveloper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px; }
+  @media (min-width: 600px) {
+    .aboutGameNight, .aboutDeveloper {
+      flex-direction: row;
+      margin-bottom: 50px; } }
+
+.aboutGameNight .aboutDescriptionInfo, .aboutDeveloper .aboutDeveloperInfo {
+  font-family: GillSans, Arial, Helvetica, sans-serif;
+  font-size: 24px; }
+  .aboutGameNight .light-mode.aboutDescriptionInfo, .aboutDeveloper .light-mode.aboutDeveloperInfo {
+    color: #04143a; }
+  .light-mode .aboutGameNight .aboutDescriptionInfo, .aboutGameNight .light-mode .aboutDescriptionInfo, .light-mode .aboutDeveloper .aboutDeveloperInfo, .aboutDeveloper .light-mode .aboutDeveloperInfo {
+    color: #04143a; }
+  .aboutGameNight .dark-mode.aboutDescriptionInfo, .aboutDeveloper .dark-mode.aboutDeveloperInfo {
+    color: #ffffff; }
+  .dark-mode .aboutGameNight .aboutDescriptionInfo, .aboutGameNight .dark-mode .aboutDescriptionInfo, .dark-mode .aboutDeveloper .aboutDeveloperInfo, .aboutDeveloper .dark-mode .aboutDeveloperInfo {
+    color: #ffffff; }
+
+@media (min-width: 600px) {
+  .aboutGameNight {
+    flex-direction: row-reverse; } }
+.aboutGameNight .fluidImageWrapper {
+  width: 100%;
+  max-width: 438px;
+  margin: 0 0 25px 0; }
+  @media (min-width: 600px) {
+    .aboutGameNight .fluidImageWrapper {
+      margin: 0 0 0 35px; } }
+.aboutGameNight .aboutDescriptionInfo {
+  margin: 0;
+  max-width: 436px; }
+
+.aboutDeveloper .fluidImageWrapper {
+  width: 100%;
+  min-width: 175px;
+  max-width: 233px;
+  margin: 0 0 25px 0; }
+  @media (min-width: 600px) {
+    .aboutDeveloper .fluidImageWrapper {
+      margin: 0 45px 0 0; } }
+.aboutDeveloper .profilePicture {
+  border-radius: 100%;
+  border: 5px solid #ffffff;
+  box-shadow: 3px 6px 10px 0 #6b828f; }
+.aboutDeveloper .aboutDeveloperInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 638px; }
+  .aboutDeveloper .aboutDeveloperInfo .aboutDeveloperTitle {
+    font-size: 32px;
+    margin-bottom: 20px; }
+    .aboutDeveloper .aboutDeveloperInfo .aboutDeveloperTitle.light-mode {
+      color: #6d6d6d; }
+    .light-mode .aboutDeveloper .aboutDeveloperInfo .aboutDeveloperTitle {
+      color: #6d6d6d; }
+    .aboutDeveloper .aboutDeveloperInfo .aboutDeveloperTitle.dark-mode {
+      color: #b4b4b4; }
+    .dark-mode .aboutDeveloper .aboutDeveloperInfo .aboutDeveloperTitle {
+      color: #b4b4b4; }
+  .aboutDeveloper .aboutDeveloperInfo .aboutDeveloperText {
+    margin: 0 0 20px 0; }
+  .aboutDeveloper .aboutDeveloperInfo .aboutLinks {
+    display: flex;
+    flex-direction: column; }
+    @media (min-width: 600px) {
+      .aboutDeveloper .aboutDeveloperInfo .aboutLinks {
+        flex-wrap: wrap;
+        flex-direction: row; } }
+    .aboutDeveloper .aboutDeveloperInfo .aboutLinks .socialMediaLink {
+      display: flex;
+      opacity: 0.5;
+      font-size: 18px;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 0 0 20px 0; }
+      .aboutDeveloper .aboutDeveloperInfo .aboutLinks .socialMediaLink:last-of-type {
+        align-items: center; }
+      .aboutDeveloper .aboutDeveloperInfo .aboutLinks .socialMediaLink.light-mode {
+        color: #04143a; }
+      .light-mode .aboutDeveloper .aboutDeveloperInfo .aboutLinks .socialMediaLink {
+        color: #04143a; }
+      .aboutDeveloper .aboutDeveloperInfo .aboutLinks .socialMediaLink.dark-mode {
+        color: #ffffff; }
+      .dark-mode .aboutDeveloper .aboutDeveloperInfo .aboutLinks .socialMediaLink {
+        color: #ffffff; }
+      @media (min-width: 600px) {
+        .aboutDeveloper .aboutDeveloperInfo .aboutLinks .socialMediaLink {
+          margin: 0 45px 20px 0; } }
+      .aboutDeveloper .aboutDeveloperInfo .aboutLinks .socialMediaLink svg {
+        margin-right: 10px; }
 
 /*# sourceMappingURL=index.css.map */

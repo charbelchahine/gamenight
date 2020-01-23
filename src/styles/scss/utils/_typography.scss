@@ -34,8 +34,10 @@ $black: 900;
 
 // Include your fonts here
 @include font('neutratext');
+@include font('gillsans');
 
 $neutraFont: NeutraText bold, Arial, Helvetica, sans-serif;
+$gillSansFont: GillSans, Arial, Helvetica, sans-serif;
 
 %gameName {
     font-size: 27px;
