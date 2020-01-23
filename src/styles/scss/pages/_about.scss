@@ -1,0 +1,101 @@
+%aboutLayouts {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 70px;
+    @include md {
+        flex-direction: row;
+        margin-bottom: 50px;
+    }
+}
+
+%aboutText {
+    font-family: $gillSansFont;
+    font-size: 24px;
+    @include themed {
+        color: t(aboutText);
+    }
+}
+
+.aboutGameNight {
+    @extend %aboutLayouts;
+    @include md {
+        flex-direction: row-reverse;
+    }
+    .fluidImageWrapper {
+        width: 100%;
+        max-width: 438px;
+        margin: 0 0 25px 0;
+        @include md {
+            margin: 0 0 0 35px;
+        }
+    }
+    .aboutDescriptionInfo {
+        @extend %aboutText;
+        margin: 0;
+        max-width: 436px;
+    }
+}
+
+.aboutDeveloper {
+    @extend %aboutLayouts;
+    .fluidImageWrapper {
+        width: 100%;
+        min-width: 175px;
+        max-width: 233px;
+        margin: 0 0 25px 0;
+        @include md {
+            margin: 0 45px 0 0;
+        }
+    }
+    .profilePicture {
+        border-radius: 100%;
+        border: 5px solid #ffffff;
+        box-shadow: 3px 6px 10px 0 #6b828f;
+    }
+    .aboutDeveloperInfo {
+        @extend %aboutText;
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+        max-width: 638px;
+        .aboutDeveloperTitle {
+            font-size: 32px;
+            margin-bottom: 20px;
+            @include themed {
+                color: t(aboutTitle);
+            }
+        }
+        .aboutDeveloperText {
+            margin: 0 0 20px 0;
+        }
+        .aboutLinks {
+            display: flex;
+            flex-direction: column;
+            @include md {
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            .socialMediaLink {
+                display: flex;
+                opacity: 0.5;
+                font-size: 18px;
+                cursor: pointer;
+                text-decoration: none;
+                margin: 0 0 20px 0;
+                &:last-of-type {
+                    align-items: center;
+                }
+                @include themed {
+                    color: t(aboutText);
+                }
+                @include md {
+                    margin: 0 45px 20px 0;
+                }
+                svg {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
