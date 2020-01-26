@@ -1,0 +1,16 @@
+<svg width="205px" height="205px" viewBox="0 0 205 205" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="66.9482874%" id="rollDice-one-radialGradient-1">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#4E4E4E" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-170.000000, -170.000000)" fill-rule="nonzero">
+            <g transform="translate(170.000000, 170.000000)">
+                <path d="M174.695652,0 L30.3043478,0 C13.5923913,0 0,13.5929823 0,30.3056655 L0,174.694335 C0,191.407018 13.5923913,205 30.3043478,205 L174.695652,205 C191.407609,205 205,191.407018 205,174.694335 L205,30.3145789 C205,13.6018957 191.407609,0 174.695652,0 Z" fill="#FFFFFF"></path>
+                <circle id="Oval" fill="url(#rollDice-one-radialGradient-1)" cx="103" cy="105" r="18"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

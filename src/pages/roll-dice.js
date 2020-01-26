@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing';
 import { Fab } from '@material-ui/core';
 import Layout from '../components/Layout/layout';
-import ComingSoon from '../components/ComingSoon/comingSoon';
+import RollDice from '../games/rollDice/rollDice';
 
 import CloseIcon from '../assets/svg/x.svg';
 import '../styles/css/index.css';
@@ -24,7 +24,7 @@ const RollDicePage = ({ pageContext: { lang }, location: { pathname } }) => (
                 <Helmet title={T.translate('rollDice.title')} />
                 <div className="gameContents rollDiceContents">
                     <span className="gameName">{T.translate('rollDice.title')}</span>
-                    <ComingSoon />
+                    <RollDice />
                     {modal && (
                         <Fab aria-label="Close" classes={{ root: 'closeButton' }} href={closeTo}>
                             <CloseIcon />

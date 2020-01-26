@@ -1,0 +1,30 @@
+.diceContainer {
+    display: flex;
+    margin: 50px 0;
+    justify-content: space-evenly;
+    &.twoDices {
+        svg {
+            flex-basis: 45%;
+        }
+    }
+}
+
+.rollDiceButtonContainer {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-evenly;
+    .rollDiceButton {
+        @extend %font-size-14;
+        flex-basis: 45%;
+        height: 45px;
+        max-width: 150px;
+        border-radius: 10px;
+        font-weight: $medium;
+        text-transform: capitalize;
+        box-shadow: 0 1px 10px 0 #e0e2e4;
+        @include themed {
+            color: t(rollDiceCloseColor);
+            background: t(rollDiceCloseBackground);
+        }
+    }
+}

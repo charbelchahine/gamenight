@@ -1,7 +1,7 @@
 import React from 'react';
 
-import RollDiceLight from '../assets/svg/gameIcons/rollDice_light.svg';
-import RollDiceDark from '../assets/svg/gameIcons/rollDice_dark.svg';
+import RollDiceLight from '../assets/svg/gameIcons/rollDice/rollDice_light.svg';
+import RollDiceDark from '../assets/svg/gameIcons/rollDice/rollDice_dark.svg';
 import CoinFlipLight from '../assets/svg/gameIcons/coinFlip_light.svg';
 import CoinFlipDark from '../assets/svg/gameIcons/coinFlip_dark.svg';
 import DrawCardLight from '../assets/svg/gameIcons/drawCard_light.svg';
