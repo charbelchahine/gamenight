@@ -7,6 +7,11 @@ $medium: 500;
 $bold: 700;
 $black: 900;
 
+%font-size-14 {
+    font-size: 14px;
+    line-height: 16px;
+}
+
 // Import fonts from /static/fonts folder
 @mixin font-weight($name, $weight: '') {
     $space-weight: ' ' + $weight;

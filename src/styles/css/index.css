@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap");
+.rollDiceButtonContainer .rollDiceButton {
+  font-size: 14px;
+  line-height: 16px; }
+
 @font-face {
   font-family: neutratext;
   font-display: swap;
@@ -978,5 +982,37 @@ nav {
           margin: 0 45px 20px 0; } }
       .aboutDeveloper .aboutDeveloperInfo .aboutLinks .socialMediaLink svg {
         margin-right: 10px; }
+
+.diceContainer {
+  display: flex;
+  margin: 50px 0;
+  justify-content: space-evenly; }
+  .diceContainer.twoDices svg {
+    flex-basis: 45%; }
+
+.rollDiceButtonContainer {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-evenly; }
+  .rollDiceButtonContainer .rollDiceButton {
+    flex-basis: 45%;
+    height: 45px;
+    max-width: 150px;
+    border-radius: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+    box-shadow: 0 1px 10px 0 #e0e2e4; }
+    .rollDiceButtonContainer .rollDiceButton.light-mode {
+      color: #4acae4;
+      background: #ffffff; }
+    .light-mode .rollDiceButtonContainer .rollDiceButton {
+      color: #4acae4;
+      background: #ffffff; }
+    .rollDiceButtonContainer .rollDiceButton.dark-mode {
+      color: #ffffff;
+      background: #014263; }
+    .dark-mode .rollDiceButtonContainer .rollDiceButton {
+      color: #ffffff;
+      background: #014263; }
 
 /*# sourceMappingURL=index.css.map */
